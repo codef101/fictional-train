@@ -28,7 +28,7 @@
 
   <link rel="stylesheet" href="index.css">
 
-  <title>In Our Red Stilettos | Home</title>
+  <title>In Our Green Stilettos | Home</title>
 
   <script src="navigation.js" defer></script>
 
