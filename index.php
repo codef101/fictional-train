@@ -28,7 +28,7 @@
 
   <link rel="stylesheet" href="index.css">
 
-  <title>In Our Green Stilettos | Home</title>
+  <title>In Our Red Stilettos | Home</title>
 
   <script src="navigation.js" defer></script>
 
@@ -62,7 +62,7 @@
 
     <div>
 
-      <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">In our blue
+      <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">In our Red
 
       <span class="d-block fs-700 ff-serif text-white">Stilettos</span></h1>
 
