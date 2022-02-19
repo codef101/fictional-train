@@ -94,6 +94,17 @@ if(isset($_POST['pre-game-otp'])){
   
 
   <div id="end" class="container-quick-quiz flex-center flex-column">
+    
+    <div class="demo-box">
+        <table title="Content" id="content">
+            <tr>
+                <td>
+                    <div class="iors-demo-title">IN OUR RED STILETTOS GAME</div>
+                    <iframe height=628 width=820 src="iors-game/www/index.html"></iframe>
+                </td>
+            </tr>
+        </table>
+    </div>
 
     <h2 class="fs-700 ff-serif uppercase flex-center flex-column">QUICK POST-GAME QUIZ</h2>
 
