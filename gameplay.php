@@ -99,7 +99,7 @@ if(isset($_POST['pre-game-otp'])){
         <table title="Content" id="content">
             <tr>
                 <td>
-                    <div class="iors-demo-title">IN OUR RED STILETTOS GAME</div>
+                    <div class="iors-game-title fs-400 ff-sans-cond letter-spacing-3 uppercase">IN OUR RED STILETTOS GAME</div>
                     <iframe height=628 width=820 src="iors-game/www/index.html"></iframe>
                 </td>
             </tr>
