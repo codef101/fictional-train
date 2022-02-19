@@ -2326,3 +2326,12 @@ body {
     padding: 0.5rem;
 
 }
+
+/* GAME UPLOADED TO WEBSITE */
+
+.iors-game-title {
+    
+    color: hsl( var(--clr-light) );
+    margin-bottom: 10px;
+    
+}
