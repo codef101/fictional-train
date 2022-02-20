@@ -55,7 +55,16 @@
 
             "lengthChange": true,
             "autoWidth": false,
-            "buttons": ["pdf"],
+            "buttons": [{
+                extend:'pdf',
+                text:'Save as PDF',
+                title:'IORS Admin Panel',
+                exportOptions:{
+                    modifier:{
+                        page:'current'
+                    }
+                }
+            }],
             "responsive": true,
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
 
