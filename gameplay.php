@@ -78,7 +78,7 @@ if(isset($_POST['pre-game-otp'])){
     #game-commands td {
       background-color: hsl( var(--clr-light) );
       color: black;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     #game-commands th {
