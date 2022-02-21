@@ -67,17 +67,12 @@ if(isset($_POST['pre-game-otp'])){
   
   <style>
     #game-commands {
-      font-family: Arial, Helvetica, sans-serif;
       border-collapse: collapse;
     }
 
     #game-commands td, #customers th {
       border: 1px solid #ddd;
       padding: 8px;
-    }
-
-    #game-commands tr:nth-child(even) {
-      background-color: #f2f2f2;
     }
 
     #game-commands tr:hover {
@@ -87,7 +82,7 @@ if(isset($_POST['pre-game-otp'])){
     #game-commands th {
       padding-top: 12px;
       padding-bottom: 12px;
-      text-align: left;
+      text-align: center;
       background-color: #04AA6D;
       color: white;
     }
