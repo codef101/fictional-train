@@ -204,7 +204,7 @@ if(isset($_POST['pre-game-otp'])){
                 <td>
                     <div class="flex-center">
                       <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: 20px 0;">IN OUR RED STILETTOS GAME</div>
-                      <iframe height=628 width=820 src="iors-game/www/index.html"></iframe>
+                      <iframe class="flex-center" height=628 width=820 src="iors-game/www/index.html"></iframe>
                     </div>
                 </td>
             </tr>
