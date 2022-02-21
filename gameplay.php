@@ -169,7 +169,9 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Open Game Menu</td>
+        <td>Open Game Menu<br><br>
+          <i>*can only be done while navigating town map</i>
+        </td>
         <td>X</td>
       </tr>
       
@@ -189,9 +191,7 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Save Game Progress<br><br>
-          <i>*can only be done while navigating town map</i>
-        </td>
+        <td>Save Game Progress</td>
         <td>X → Save → Select any of the save file slots</td>
       </tr>
       
