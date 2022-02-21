@@ -110,11 +110,9 @@ include('includes/functions.php');
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Confirm delete'
             }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        window.location.href=url
-                    )
-                }
+               if (result.isConfirmed) {
+                   window.location.href=url
+               }
             })
         });
 
