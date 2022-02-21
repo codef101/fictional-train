@@ -96,7 +96,7 @@ if(isset($_POST['pre-game-otp'])){
   <div id="end" class="container-quick-quiz flex-center flex-column">
     
     <!-- GAME COMMANDS LIST -->
-    <table style="width:100%">
+    <table>
       
       <tr>
        <th>Actions</th>
