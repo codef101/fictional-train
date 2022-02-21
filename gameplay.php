@@ -134,12 +134,12 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Enable Full Screen Mode</td>
+        <td>Enter Full Screen Mode</td>
         <td>F4</td>
       </tr>
       
       <tr>
-        <td>Disable Full Screen Mode</td>
+        <td>Exit Full Screen Mode</td>
         <td>ESC</td>
       </tr>
       
