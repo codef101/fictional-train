@@ -211,7 +211,7 @@ if(isset($_POST['pre-game-otp'])){
     
     <!-- GAME -->
     
-    <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: auto;">GAMEPLAY</div>
+    <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: 30px 0 30px;">GAMEPLAY</div>
     
     <div class="demo-box" style="margin: auto;">
         <table title="Content" id="content">
