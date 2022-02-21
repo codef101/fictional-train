@@ -95,6 +95,8 @@ if(isset($_POST['pre-game-otp'])){
 
   <div id="end" class="container-quick-quiz flex-center flex-column">
     
+    <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin-bottom: 10px;">GAME COMMANDS LIST</div>
+    
     <!-- GAME COMMANDS LIST -->
     <table style="width:100%">
       
@@ -111,6 +113,56 @@ if(isset($_POST['pre-game-otp'])){
       <tr>
         <td>Select Character’s Choice of Action</td>
         <td>Up or Down Arrow Keys → ENTER or CLICK</td>
+      </tr>
+      
+      <tr>
+        <td>Move</td>
+        <td>Arrow Keys</td>
+      </tr>
+      
+      <tr>
+        <td>Run</td>
+        <td>Shift + Arrow Keys</td>
+      </tr>
+      
+      <tr>
+        <td>Interact</td>
+        <td>ENTER, SPACE, or Z</td>
+      </tr>
+      
+      <tr>
+        <td>Open Game Menu</td>
+        <td>X</td>
+      </tr>
+      
+      <tr>
+        <td>Go Back to Previous Screen in Game Menu</td>
+        <td>ESC</td>
+      </tr>
+      
+      <tr>
+        <td>Exit Game Menu</td>
+        <td>ESC</td>
+      </tr>
+      
+      <tr>
+        <td>Change Game Options</td>
+        <td>X → Options</td>
+      </tr>
+      
+      <tr>
+        <td>Save Game Progress</td>
+        <td>X → Save → Select any of the save file slots</td>
+      </tr>
+      
+      <tr>
+        <td>Continue Game From Save File (From Title Screen)</td>
+        <td>Continue → Select save file</td>
+      </tr>
+      
+      <tr>
+        <td>Continue Game From Save File (From Ongoing Gameplay)</td>
+        <td>X → Return to Title → Continue → Select save file</td>
       </tr>
 
     </table>
