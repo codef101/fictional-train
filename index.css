@@ -2326,3 +2326,11 @@ body {
     padding: 0.5rem;
 
 }
+
+/* TABLE */
+
+table, th, td {
+    
+    border: 1px solid white;
+    
+}
