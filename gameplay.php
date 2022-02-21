@@ -95,6 +95,28 @@ if(isset($_POST['pre-game-otp'])){
 
   <div id="end" class="container-quick-quiz flex-center flex-column">
     
+    <!-- GAME COMMANDS LIST -->
+    <table style="width:100%">
+      
+      <tr>
+       <th>Actions</th>
+       <th>Commands</th>
+      </tr>
+      
+      <tr>
+        <td>Progress Through Dialogue</td>
+        <td>ENTER, SPACE, or Z</td>
+      </tr>
+      
+      <tr>
+        <td>Select Character’s Choice of Action</td>
+        <td>Up or Down Arrow Keys → ENTER or CLICK</td>
+      </tr>
+
+    </table>
+    
+    <!-- END OF GAME COMMANDS LIST -->
+    
     <!-- GAME -->
     
     <div class="demo-box" style="margin-bottom: 10px">
