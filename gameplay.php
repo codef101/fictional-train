@@ -74,16 +74,17 @@ if(isset($_POST['pre-game-otp'])){
       border: 1px solid #ddd;
       padding: 8px;
     }
-
-    #game-commands tr:hover {
-      background-color: #ddd;
+    
+    #game-commands td {
+      background-color: hsl( var(--clr-light) );
+      color: black;
     }
 
     #game-commands th {
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: center;
-      background-color: #04AA6D;
+      background-color: #151552;
       color: white;
     }
     
