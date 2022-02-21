@@ -98,7 +98,7 @@ if(isset($_POST['pre-game-otp'])){
     <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin-bottom: 10px;">GAME COMMANDS LIST</div>
     
     <!-- GAME COMMANDS LIST -->
-    <table style="width:100%">
+    <table style="width: 100%; padding: 10px 0;">
       
       <tr>
        <th>Actions</th>
