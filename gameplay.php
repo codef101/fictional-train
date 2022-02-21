@@ -133,6 +133,16 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
+        <td>Make Game Go Full Screen</td>
+        <td>F4</td>
+      </tr>
+      
+      <tr>
+        <td>Go Back to Normal Screen</td>
+        <td>ESC</td>
+      </tr>
+      
+      <tr>
         <td>Progress Through Dialogue</td>
         <td>ENTER, SPACE, or Z</td>
       </tr>
