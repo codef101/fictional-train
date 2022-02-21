@@ -62,6 +62,37 @@ if(isset($_POST['pre-game-otp'])){
   <script src="navigation.js" defer></script>
 
   <script src="tabs.js" defer></script>
+  
+  <!-- Table Styling -->
+  <style>
+    #game-commands {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #game-commands td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #game-commands tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #game-commands tr:hover {
+      background-color: #ddd;
+    }
+
+    #game-commands th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+  </style>
 
 
 
@@ -98,7 +129,7 @@ if(isset($_POST['pre-game-otp'])){
     <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin-bottom: 10px;">GAME COMMANDS LIST</div>
     
     <!-- GAME COMMANDS LIST -->
-    <table style="width: 100%; margin: 20px 0;">
+    <table id="game-commands" style="width: 100%; margin: 20px 0;">
       
       <tr>
        <th>Actions</th>
