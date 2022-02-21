@@ -69,7 +69,6 @@ if(isset($_POST['pre-game-otp'])){
     #game-commands {
       font-family: Arial, Helvetica, sans-serif;
       border-collapse: collapse;
-      width: 100%;
     }
 
     #game-commands td, #customers th {
@@ -130,7 +129,7 @@ if(isset($_POST['pre-game-otp'])){
     <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin-bottom: 10px;">GAME COMMANDS LIST</div>
     
     <!-- GAME COMMANDS LIST -->
-    <table id="game-commands" style="margin: 20px 0;">
+    <table id="game-commands" style="width: 100%; margin: 20px 0;">
       
       <tr>
        <th>Actions</th>
