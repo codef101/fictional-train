@@ -169,7 +169,7 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Open Game Menu<br><br>
+        <td>Open Game Menu<br>
           <i>*can only be done while navigating town map</i>
         </td>
         <td>X</td>
