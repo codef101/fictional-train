@@ -133,12 +133,12 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Make Game Go Full Screen</td>
+        <td>Activate Full Screen Mode</td>
         <td>F4</td>
       </tr>
       
       <tr>
-        <td>Go Back to Normal Screen</td>
+        <td>Return to Normal Screen Mode</td>
         <td>ESC</td>
       </tr>
       
@@ -173,7 +173,7 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Go Back to Previous Screen in Game Menu</td>
+        <td>Return to Previous Screen in Game Menu</td>
         <td>ESC</td>
       </tr>
       
@@ -183,7 +183,7 @@ if(isset($_POST['pre-game-otp'])){
       </tr>
       
       <tr>
-        <td>Change Game Options</td>
+        <td>Modify Game Options</td>
         <td>X → Options</td>
       </tr>
       
