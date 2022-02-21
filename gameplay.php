@@ -71,7 +71,7 @@ if(isset($_POST['pre-game-otp'])){
     }
 
     #game-commands td, #customers th {
-      border: 1px solid #151552;
+      border: 2px solid #151552;
       padding: 8px;
     }
     
