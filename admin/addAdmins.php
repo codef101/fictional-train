@@ -177,7 +177,7 @@ if (isset($_POST['register'])) {
                                 <option value="0">Super Admin</option>
                                 <option value="1">Admin</option>
                             </select>
-                            <span class="text-danger"><?//php echo $role_err;?></span>
+                            <span class="text-danger">php echo $role_err;</span>
                         </div>
                     </div>
                     -->
