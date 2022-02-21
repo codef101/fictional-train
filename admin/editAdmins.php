@@ -185,10 +185,10 @@ if (isset($_POST['register'])) {
                         <div class="form-group">
                             <label>Role</label><br>
                             <select class="select" name="role">
-                                <option value="0" <?php// if($role == 0){echo "selected";} ?>>Super Admin</option>
-                                <option value="1" <?php //if($role == 1){echo "selected";} ?>>Admin</option>
+                                <option value="0" php if($role == 0){echo "selected";} >Super Admin</option>
+                                <option value="1"  php if($role == 1){echo "selected";} >Admin</option>
                             </select>
-                            <span class="text-danger"><?php //echo $role_err; ?></span>
+                            <span class="text-danger"> php echo $role_err; </span>
                         </div>
                     </div>
                     -->
