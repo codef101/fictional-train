@@ -97,6 +97,7 @@ if(isset($_POST['pre-game-otp'])){
       padding-top: 35px;
       height: 0;
       overflow: hidden;
+      margin: 30px 0;
      }
     
     
