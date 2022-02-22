@@ -89,6 +89,27 @@ if(isset($_POST['pre-game-otp'])){
       color: white;
     }
     
+    /* GAME STYLING */
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 35px;
+      height: 0;
+      overflow: hidden;
+     }
+    
+    
+    .video-container iframe {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* END OF GAME STYLING */
+    
   </style>
 
 
@@ -213,6 +234,7 @@ if(isset($_POST['pre-game-otp'])){
     
     <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: 50px 0 10px;">GAMEPLAY</div>
     
+    <!--
     <div class="demo-box" style="margin: auto;">
         <table title="Content" id="content">
             <tr>
@@ -223,6 +245,13 @@ if(isset($_POST['pre-game-otp'])){
                 </td>
             </tr>
         </table>
+    </div>
+    -->
+    
+    
+    <div>
+      <iframe src="iors-game/www/index.html" height="315" width="560" allowfullscreen="" frameborder="0">
+      </iframe>
     </div>
     
     <!-- END OF GAME -->
