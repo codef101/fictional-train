@@ -251,7 +251,7 @@ if(isset($_POST['pre-game-otp'])){
     
     
     <div class="game-container">
-      <iframe src="iors-game/www/index.html" height="623" width="815" allowfullscreen="" frameborder="0">
+      <iframe src="iors-game/www/index.html" height="628" width="820" allowfullscreen="" frameborder="0">
       </iframe>
     </div>
     
