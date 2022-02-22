@@ -91,7 +91,7 @@ if(isset($_POST['pre-game-otp'])){
     
     /* GAME STYLING */
     
-    .video-container {
+    .game-container {
       position: relative;
       padding-bottom: 56.25%;
       padding-top: 35px;
@@ -100,7 +100,7 @@ if(isset($_POST['pre-game-otp'])){
      }
     
     
-    .video-container iframe {
+    .game-container iframe {
       position: absolute;
       top:0;
       left: 0;
@@ -249,7 +249,7 @@ if(isset($_POST['pre-game-otp'])){
     -->
     
     
-    <div>
+    <div class="game-container">
       <iframe src="iors-game/www/index.html" height="315" width="560" allowfullscreen="" frameborder="0">
       </iframe>
     </div>
