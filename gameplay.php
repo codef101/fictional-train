@@ -209,7 +209,7 @@ if(isset($_POST['pre-game-otp'])){
       
       <tr>
         <td>Modify Game Options</td>
-        <td>X → Options</td>
+        <td>X → Options → Select option to modify → Left or Right Arrow Keys</td>
       </tr>
       
       <tr>
