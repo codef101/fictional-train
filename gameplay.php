@@ -112,8 +112,17 @@ if(isset($_POST['pre-game-otp'])){
     /* END OF GAME STYLING */
     
   </style>
-
-
+  
+  <!-- GAME INDEX.HTML HEADER -->
+  
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="user-scalable=no">
+        <link rel="icon" href="iors-game/www/icon/icon.png" type="image/png">
+        <link rel="apple-touch-icon" href="iors-game/www/icon/icon.png">
+        <link rel="stylesheet" type="text/css" href="iors-game/www/fonts/gamefont.css">
+  
+  <!-- END OF GAME INDEX.HTML HEADER -->
 
 </head>
 
@@ -249,13 +258,30 @@ if(isset($_POST['pre-game-otp'])){
     </div>
     -->
     
+    <!-- GAME -->
     
+    <!--
     <div class="game-container">
       <iframe src="iors-game/www/index.html" height="628" width="820" allowfullscreen="" frameborder="0">
       </iframe>
     </div>
-    
+    -->
     <!-- END OF GAME -->
+    
+        <script type="text/javascript" src="iors-game/www/js/libs/pixi.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/libs/pixi-tilemap.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/libs/pixi-picture.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/libs/fpsmeter.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/libs/lz-string.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/libs/iphone-inline-video.browser.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/rpg_core.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/rpg_managers.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/rpg_objects.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/rpg_scenes.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/rpg_sprites.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/rpg_windows.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/plugins.js"></script>
+        <script type="text/javascript" src="iors-game/www/js/main.js"></script>
 
     <h2 class="fs-700 ff-serif uppercase flex-center flex-column">QUICK POST-GAME QUIZ</h2>
 
