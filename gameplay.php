@@ -268,6 +268,9 @@ if(isset($_POST['pre-game-otp'])){
     -->
     <!-- END OF GAME -->
     
+    <!-- GAME -->
+    
+    <div class="game-container" style="background-color: black">
         <script type="text/javascript" src="iors-game/www/js/libs/pixi.js"></script>
         <script type="text/javascript" src="iors-game/www/js/libs/pixi-tilemap.js"></script>
         <script type="text/javascript" src="iors-game/www/js/libs/pixi-picture.js"></script>
@@ -282,7 +285,10 @@ if(isset($_POST['pre-game-otp'])){
         <script type="text/javascript" src="iors-game/www/js/rpg_windows.js"></script>
         <script type="text/javascript" src="iors-game/www/js/plugins.js"></script>
         <script type="text/javascript" src="iors-game/www/js/main.js"></script>
+    </div>
 
+    <!-- END OF GAME -->
+    
     <h2 class="fs-700 ff-serif uppercase flex-center flex-column">QUICK POST-GAME QUIZ</h2>
 
     <p>You need to answer a final quiz to unlock the game ending. This is to determine your 
