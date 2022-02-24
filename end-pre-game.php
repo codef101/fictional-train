@@ -19,16 +19,12 @@ if(isset($_SESSION['username'])){
     if(isset($_POST['preGameScore'])){
 
         $preGameScore = intval($_POST['preGameScore']);
-
-        if (save_player_pre_game_score($existingUsername,$preGameScore)) {
-
-          // $msg.= "<br>Your pre-game quiz score was inserted successfully!";
-
-        } else {
-
-          $msg.= "<br>Your pre-game quiz score could not be sent.";
-
-        }
+      if (save_player_pre_game_score($existingUsername,$preGameScore)) {
+        $msg.= "<br>Your pre-game score was inserted successfully!";
+        $_SESSION['check_url'] = "end-pre-game";
+      } else {
+        $msg.= "<br>Your pre-game score could not be sent.";
+      }
 
     }
 
@@ -43,6 +39,8 @@ if(isset($_SESSION['username'])){
 
 
 ?>
+
+<?php if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "end-pre-game") { ?>
 
 <!DOCTYPE html>
 
@@ -183,5 +181,54 @@ if(isset($_SESSION['username'])){
   <script src="end-pre-game.js"></script>
 
   </body>
+    
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  $('body').on('click', function(e) {
+    changes = false; 
+    var target, href;
+      url = '';
+    target = $(e.target);
+    if (e.target.tagName === 'A' || target.parents('a').length > 0 ) {
+      changes = true;
+        url = $(e.target).attr('href');
+      if(changes){
+        e.preventDefault();
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+        },
+          buttonsStyling: true
+        })
+        swalWithBootstrapButtons.fire({
+          text: "Are you sure you want to leave this page? Your progress will not be saved.",
+            padding: '3em',
+          color: '#fff',
+          background: '#0B0A29',
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+          showCancelButton: true,
+          confirmButtonText: 'Leave',
+          cancelButtonText: 'Cancel',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            <?php $_SESSION['check_url'] = "end-pre-game"; ?>
+            window.location.href=url;
+          } 
+        })
+      }
+      changes = false;
+    }
+  });
+</script>
 
 </html>
+
+<?php }else{ 
+  header("location: game");
+  exit();
+}
+?>
