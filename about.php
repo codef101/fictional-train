@@ -37,6 +37,12 @@
   <!-- PICTURE STYLING -->
   
   <style>
+    
+  #game-image {
+    
+    margin-bottom: 50px;
+    
+  }
   
   #campaign-image {
     
