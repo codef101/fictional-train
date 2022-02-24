@@ -14,6 +14,7 @@ if(isset($_POST['pre-game-otp'])){
   if(!check_pre_game_otp_exists_for_username($username,$pre_game_otp)){
 
     $_SESSION['pre_game_otp_error'] = 'OTP code invalid';
+    $_SESSION['check_url'] = "pre-game-verification";
 
     //$_SESSION['resend_otp'] = true;
 
@@ -25,7 +26,11 @@ if(isset($_POST['pre-game-otp'])){
 
 }
 
+$_SESSION['check_url'] = "gameplay";
+
 ?>
+
+<?php if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "gameplay") { ?>
 
 <!DOCTYPE html>
 
@@ -255,7 +260,7 @@ if(isset($_POST['pre-game-otp'])){
 
     <br>
 
-    <a href="post-game-quiz" class="start-button uppercase ff-serif text-dark bg-white">Start</a>
+    <button  type="button" onclick="location.href='post-game-quiz'" class="start-button uppercase ff-serif text-dark bg-white">Start</button>
 
     <br><br><br><br>
     
@@ -264,5 +269,53 @@ if(isset($_POST['pre-game-otp'])){
 </div>
 
   </body>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  $('body').on('click', function(e) {
+    changes = false; 
+    var target, href;
+    target = $(e.target);
+    url ='';
+    if (e.target.tagName === 'A' || target.parents('a').length > 0 ) {
+      changes = true;
+      url = $(e.target).attr('href');
+      if(changes){
+        e.preventDefault();
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+        },
+          buttonsStyling: true
+        })
+        swalWithBootstrapButtons.fire({
+          text: "Are you sure you want to leave this page? Your progress will not be saved.",
+          padding: '3em',
+          color: '#fff',
+          background: '#0B0A29',
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+          showCancelButton: true,
+          confirmButtonText: 'Leave',
+          cancelButtonText: 'Cancel',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            <?php $_SESSION['check_url'] = "gameplay"; ?>
+            url = $(e.target).attr('href');
+          } 
+        })
+      }
+      changes = false;
+    }
+  });
+</script>
+</html>
+<?php }else{ 
+    header("location: game");
+    exit();
+}
 
 </html>
