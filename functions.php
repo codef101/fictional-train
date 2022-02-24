@@ -65,9 +65,14 @@ function check_post_game_email_exists($email){
 
 function create_player_info($username,$age,$gender,$race){
 	global $conn;
+	unset($_SESSION['check_url']);
+	unset($_SESSION['user_id']);
+	unset($_SESSION['questions']);
 	$username = encrypt_decrypt($username,'encrypt');
 	$sql = sprintf("INSERT INTO player_info(username, age, gender, race) VALUES('%s', '%s', '%s', '%s')",$username,$age,$gender,$race) ;
     $res = mysqli_query($conn, $sql);
+	$_SESSION['user_id'] = mysqli_insert_id($conn);
+	$_SESSION['check_url'] = 'pre-game-quiz';
 	if($res ==true && mysqli_insert_id($conn) == true){
 		$query = sprintf("SELECT question_id,question  FROM questions WHERE deleted_at IS NULL");
 		$result = mysqli_query($conn, $query);
