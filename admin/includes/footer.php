@@ -58,7 +58,7 @@
             "buttons": [{
                 extend:'pdf',
                 text:'Save as PDF',
-                title:'IORS Admin Panel',
+                title:'IORS Audit Log',
                 exportOptions:{
                     modifier:{
                         page:'current'
