@@ -46,7 +46,7 @@
   
   #campaign-image {
     
-    margin-bottom: 100px;
+    margin-bottom: 110px;
     
   }
     
