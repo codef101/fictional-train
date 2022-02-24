@@ -85,13 +85,6 @@
     </div>
 
   </main>
-  
-<section>
-  <div>
-    hello test
-  </div>
-</section>
-
 
 </body>
 
