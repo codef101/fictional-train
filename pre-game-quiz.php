@@ -87,6 +87,7 @@ and/or underscores (_)';
 
 ?>
 
+<?php if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "pre-game-quiz") { ?>
 
 
 <!DOCTYPE html>
@@ -271,3 +272,9 @@ and/or underscores (_)';
   </body>
 
 </html>
+
+<?php }else{ 
+    header("location: game");
+    exit();
+}
+?>
