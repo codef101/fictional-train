@@ -2,7 +2,13 @@
 require_once 'init.php';
 require_once 'db_conn.php';
 require_once 'functions.php';
-$_SESSION['check_url'] = "post-game-quiz";
+
+if(isset($_SESSION['check_url']) && $_SESSION['check_url']=='gameplay'){
+  $_SESSION['check_url'] = "post-game-quiz";
+}else{
+  $_SESSION['check_url'] = "game";
+}
+
 ?>
 <?php if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "post-game-quiz") { ?>
 
