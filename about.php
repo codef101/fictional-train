@@ -40,7 +40,7 @@
     
   #game-image {
     
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     
   }
   
