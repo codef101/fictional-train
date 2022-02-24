@@ -34,7 +34,7 @@
 
   <script src="tabs.js" defer></script>
 
-  <!-- PICTURE STYLING -->
+  <!-- IMAGES STYLING FOR DESKTOP
   
   <style>
     
@@ -53,7 +53,7 @@
   </style>
   
   
-  <!-- END OF PICTURE STYLING -->
+  END OF IMAGES STYLING FOR DESKTOP -->
 
 
 </head>
