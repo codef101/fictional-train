@@ -36,7 +36,7 @@
 
   <!-- PICTURE STYLING -->
   
-  #campaign-image {
+  picture {
     
     margin-bottom: 300px;
     
