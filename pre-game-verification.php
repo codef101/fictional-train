@@ -10,6 +10,7 @@ $username = $_SESSION['username'];
 
 if(!isset($_SESSION['pre_game_otp_error']) && !isset($_POST['resend-otp'])){
     if(isset($_POST['pre-game-email']) && !empty($_POST['pre-game-email'])){
+        $_SESSION['check_url'] = "end-pre-game";
       $email = validate($_POST['pre-game-email']);
       $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
       if(!preg_match($regex, $email)){
@@ -66,7 +67,12 @@ if(isset($_POST['resend-otp'])){
     }
   }
 }
+
+$_SESSION['check_url'] = "pre-game-verification";
+
 ?>
+
+<?php if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "pre-game-verification") { ?>
 
 <!DOCTYPE html>
 
@@ -181,5 +187,54 @@ if(isset($_POST['resend-otp'])){
   <!--<script src="end-pre-game.js"></script>-->
 
   </body>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  $('body').on('click', function(e) {
+    changes = false; 
+    var target, href;
+    target = $(e.target);
+      url ='';
+    if (e.target.tagName === 'A' || target.parents('a').length > 0 ) {
+      changes = true;
+        url = $(e.target).attr('href');
+      if(changes){
+        e.preventDefault();
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+        },
+          buttonsStyling: true
+        })
+        swalWithBootstrapButtons.fire({
+          text: "Are you sure you want to leave this page? Your progress will not be saved.",
+          padding: '3em',
+          color: '#fff',
+          background: '#0B0A29',
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+          showCancelButton: true,
+            confirmButtonText: 'Leave',
+          cancelButtonText: 'Cancel',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            <?php $_SESSION['check_url'] = "pre-game-verification"; ?>
+            window.location.href=url;
+          } 
+        })
+      }
+      changes = false;
+    }
+  });
+</script>
+</html>
+<?php }else{ 
+    header("location: game");
+    exit();
+}
+?>
 
 </html>
