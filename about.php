@@ -38,7 +38,7 @@
   
   #campaign-image {
     
-    margin-bottom: 150px;
+    margin-bottom: 300px;
     
   }
   
