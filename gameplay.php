@@ -113,7 +113,7 @@ if(isset($_POST['pre-game-otp'])){
     
   </style>
   
-  <!-- GAME INDEX.HTML HEADER -->
+  <!-- GAME INDEX.HTML HEADER
   
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -122,7 +122,7 @@ if(isset($_POST['pre-game-otp'])){
         <link rel="apple-touch-icon" href="icon/icon.png">
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
   
-  <!-- END OF GAME INDEX.HTML HEADER -->
+  END OF GAME INDEX.HTML HEADER -->
 
 </head>
 
@@ -258,16 +258,16 @@ if(isset($_POST['pre-game-otp'])){
     </div>
     -->
     
-    <!-- GAME 
+    <!-- GAME -->
    
     <div class="game-container">
       <iframe src="iors-game/www/index.html" height="628" width="820" allowfullscreen="" frameborder="0">
       </iframe>
     </div>
     
-    END OF GAME -->
+    <!-- END OF GAME -->
     
-    <!-- EMBEDDED INDEX.HTML OF GAME -->
+    <!-- EMBEDDED INDEX.HTML OF GAME
     
     <div class="game-container" style="background-color: black">
         <script type="text/javascript" src="js/libs/pixi.js"></script>
@@ -286,7 +286,7 @@ if(isset($_POST['pre-game-otp'])){
         <script type="text/javascript" src="js/main.js"></script>
     </div>
 
-    <!-- END OF EMBEDDED INDEX.HTML OF GAME -->
+    END OF EMBEDDED INDEX.HTML OF GAME -->
     
     <h2 class="fs-700 ff-serif uppercase flex-center flex-column">QUICK POST-GAME QUIZ</h2>
 
