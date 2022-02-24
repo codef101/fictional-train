@@ -36,11 +36,15 @@
 
   <!-- PICTURE STYLING -->
   
-  picture {
+  <style>
+  
+  #campaign-image {
     
-    margin-bottom: 300px;
+    margin-bottom: 150px;
     
   }
+    
+  </style>
   
   
   <!-- END OF PICTURE STYLING -->
