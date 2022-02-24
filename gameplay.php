@@ -238,6 +238,8 @@ if(isset($_POST['pre-game-otp'])){
       </iframe>
     </div>
     
+    <br><br><br><br>
+    
     <!-- END OF GAME -->
     
     <!--  QUICK POST-GAME QUIZ MESSAGE
