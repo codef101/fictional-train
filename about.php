@@ -34,6 +34,16 @@
 
   <script src="tabs.js" defer></script>
 
+  <!-- PICTURE STYLING -->
+  
+  #campaign-image {
+    
+    margin-bottom: 150px;
+    
+  }
+  
+  
+  <!-- END OF PICTURE STYLING -->
 
 
 </head>
