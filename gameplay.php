@@ -318,4 +318,4 @@ $_SESSION['check_url'] = "gameplay";
     exit();
 }
 
-</html>
+?>
