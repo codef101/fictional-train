@@ -24,8 +24,8 @@ if(isset($_SESSION['username'])){
       } else {
         $msg.= "<br>Your pre-game score could not be sent.";
       }
-        $_SESSION['check_url'] = "end-pre-game";
     }
+    $_SESSION['check_url'] = "end-pre-game";
 
 }else{
 
