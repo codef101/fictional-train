@@ -12,7 +12,7 @@ if(isset($_SESSION['username'])){
 
     $existingUsername = $_SESSION['username'];
 
-    // $msg = "Good job, ".$existingUsername;
+    $msg = "Good job, ".$existingUsername;
 
 
 
