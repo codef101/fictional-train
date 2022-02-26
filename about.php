@@ -210,7 +210,7 @@
 
       <p>The developers are 4th-year students in their final term of college 
 
-        pursuing a Bachelor of Science in Information Technology with specialization in Web Development degree.
+        pursuing a Bachelor of Science degree in Information Technology with specialization in Web Development.
 
       </p>
 
