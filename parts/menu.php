@@ -24,7 +24,7 @@ $game_in = in_array($page, array('pre-game-quiz','end-pre-game','pre-game-verifi
 
     <li class="<?php echo $page=='characters' ? 'active' : ''; ?>"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="characters"><span aria-hidden="true">01</span>Characters</a>
 
-    <li class="<?php echo ($page=='game' || $game_in) ? 'active' : ''; ?>"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="<?php if($_SESSION['check_url'] == "gameplay"){echo "gameplay";}else{echo "game"; }?>"><span aria-hidden="true">02</span>Game</a>
+    <li class="<?php echo ($page=='game' || $game_in) ? 'active' : ''; ?>"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="<?php if(isset($_SESSION['check_url']) && $_SESSION['check_url'] == "gameplay"){echo "gameplay";}else{echo "game"; }?>"><span aria-hidden="true">02</span>Game</a>
 
     <li class="<?php echo $page=='about' ? 'active' : ''; ?>"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="about"><span aria-hidden="true">03</span>About</a>
 
