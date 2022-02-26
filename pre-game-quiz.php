@@ -270,9 +270,50 @@ and/or underscores (_)';
   <script src="pre-game-quiz.js"></script>
 
   </body>
-
+ 
+ <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  $('body').on('click', function(e) {
+    changes = false; 
+    var target, href;
+    target = $(e.target);
+   url = '';
+    if (e.target.tagName === 'A' || target.parents('a').length > 0 ) {
+      changes = true;
+     url = $(e.target).attr('href');
+      if(changes){
+        e.preventDefault();
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButtonColor: '#9F1616',
+          cancelButtonColor: '#0B0A29',
+        },
+          buttonsStyling: true
+        })
+        swalWithBootstrapButtons.fire({
+          text: "Are you sure you want to leave this page? Your progress will not be saved.",
+          padding: '3em',
+          color: '#fff',
+          background: '#0B0A29',
+          confirmButtonColor: '#9F1616',
+cancelButtonColor: '#0B0A29',
+          showCancelButton: true,
+          confirmButtonText: 'Leave',
+          cancelButtonText: 'Cancel',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            <?php $_SESSION['check_url'] = "game"; ?>
+            window.location.href=url;
+          } 
+        })
+      }
+      changes = false;
+    }
+  });
+</script>
 </html>
-
 <?php }else{ 
     header("location: game");
     exit();
