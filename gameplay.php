@@ -291,7 +291,7 @@ $_SESSION['check_url'] = "gameplay";
           buttonsStyling: true
         })
         swalWithBootstrapButtons.fire({
-          text: "Are you sure you want to leave this page? Your progress will not be saved.",
+          text: "Are you sure you want to leave this page? Your progress in the game will be lost if you have not saved it.",
           padding: '3em',
           color: '#fff',
           background: '#0B0A29',
