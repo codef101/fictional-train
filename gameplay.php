@@ -304,7 +304,7 @@ $_SESSION['check_url'] = "gameplay";
         }).then((result) => {
           if (result.isConfirmed) {
             <?php $_SESSION['check_url'] = "gameplay"; ?>
-            url = $(e.target).attr('href');
+            window.location.href=url;
           } 
         })
       }
