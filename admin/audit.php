@@ -37,7 +37,7 @@ include('includes/functions.php');
                     $key='F3229A0B371ED2D9441B830D21A390C3';
                     $uid=$_SESSION['uid'];
                     $i=1;
-                        $sql = "SELECT AES_DECRYPT(a.action,UNHEX('$key')) as action, AES_DECRYPT(a.date_created,UNHEX('$key')) as datee , AES_DECRYPT(a.browser,UNHEX('$key')) as browser, ad.first_name, ad.last_name, a.audit_id from audit_log a INNER join admin ad on a.admin_id=ad.id ORDER BY a.audit_id DESC ";
+                        $sql = "SELECT AES_DECRYPT(a.action,UNHEX('$key')) as action, AES_DECRYPT(a.date_created,UNHEX('$key')) as datee , AES_DECRYPT(a.browser,UNHEX('$key')) as browser, ad.first_name, ad.last_name, a.audit_id from audit_log a INNER join admin ad on a.admin_id=ad.id ";
                     $res=$con->query($sql);
                     while($r=$res->fetch_assoc())
                     {
