@@ -1,5 +1,7 @@
 <?php
 
+/* 
+
 require_once 'init.php';
 
 require_once 'db_conn.php';
@@ -42,11 +44,12 @@ if(isset($_POST['post-game-otp'])){
 
 }
 
-$_SESSION['check_url'] = "game-ending";
+$_SESSION['check_url'] = "game-ending"; */
 
 ?>
 
-<?php if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "game-ending") { ?>
+<?php /* if(isset($_SESSION['user_id']) && intval($_SESSION['user_id']) > 0 && $_SESSION['check_url'] == "game-ending") { */ ?>
+
 
 <!DOCTYPE html>
 
