@@ -118,6 +118,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
                      <li class="nav-item">
                         <a href="users.php" class="nav-link <?php if($cur == 'users.php'){echo 'active';} ?>">
                             <i class="fas fa-users"></i>
+                            &nbsp;
                             <p>
                                 Users
                             </p>
