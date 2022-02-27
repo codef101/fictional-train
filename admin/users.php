@@ -1,6 +1,7 @@
 <?php
 include('includes/header.php');
 include('includes/functions.php');
+include('../functions.php');
 ?>
 <div class="row pt-3">
     <div class="col-12">
@@ -26,7 +27,8 @@ include('includes/functions.php');
                         <?php
                          $uid=$_SESSION['uid'];
                          $i=1;
-                         $sql="SELECT * FROM `player_info`";
+                        $username= encrypt_decrypt($username,'decrypt');
+                         $sql="SELECT * FROM `player_info` where username = $username";
                          $res=$con->query($sql);
                     while($r=$res->fetch_assoc())
                     {
