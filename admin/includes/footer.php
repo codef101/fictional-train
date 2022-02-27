@@ -52,23 +52,43 @@
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         });
         $("#example1").DataTable({
-
             "lengthChange": true,
             "autoWidth": false,
             "buttons": [{
                 extend:'pdf',
+                className:'btn-info',
                 text:'Save as PDF',
                 title:'IORS Audit Log',
+                download:'open',
                 exportOptions:{
                     modifier:{
                         page:'current'
                     }
                 }
-            }],
+            }
+            ],
             "responsive": true,
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $("#example2").DataTable({
+            "lengthChange": true,
+            "autoWidth": false,
+            "buttons": [{
+                extend:'pdf',
+                className:'btn-info',
+                text:'Save as PDF',
+                title:'IORS User Information Log',
+                download:'open',
+                exportOptions:{
+                    modifier:{
+                        page:'current'
+                    }
+                }
+            }
+            ],
+            "responsive": true,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
     });
 </script>
 </body>
