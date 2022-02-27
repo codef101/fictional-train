@@ -26,7 +26,7 @@ include('includes/functions.php');
                         <?php
                          $uid=$_SESSION['uid'];
                          $i=1;
-                         $sql="SELECT `id`, `username`, `age`, `gender`, `race`, `preGameScore`, `postGameScore` FROM `player_info`";
+                         $sql="SELECT `username`, `age`, `gender`, `race`, `preGameScore`, `postGameScore` FROM `player_info`"; //decrypt username
                          $res=$con->query($sql);
                     while($r=$res->fetch_assoc())
                     {
