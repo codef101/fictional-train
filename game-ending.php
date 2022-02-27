@@ -84,7 +84,31 @@ $_SESSION['check_url'] = "game-ending";
 
   <script src="tabs.js" defer></script>
 
+  /* GAME STYLING */
+  
+  <style>
+    
+    .ending-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 35px;
+      height: 0;
+      overflow: hidden;
+      margin: 30px 0;
+     }
+    
+    
+    .ending-container iframe {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+   
+  </style>
 
+    /* END OF GAME STYLING */
 
 </head>
 
@@ -111,8 +135,24 @@ $_SESSION['check_url'] = "game-ending";
     </nav>
 
   </header>
-
-
+  
+  
+  <div id="end" class="container-quick-quiz flex-center flex-column">
+    
+    <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: 50px 0 10px;">GAME ENDING</div>
+    
+    <!-- GAME ENDING -->
+   
+    <div class="ending-container">
+      <iframe src="epilogue/www/index.html" height="628" width="820" allowfullscreen="" frameborder="0">
+      </iframe>
+    </div>
+    
+    <br><br><br><br>
+    
+    <!-- END OF GAME ENDING -->
+    
+  </div>
 
   </body>
   
