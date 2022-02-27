@@ -245,6 +245,13 @@ $_SESSION['check_url'] = "gameplay";
     
     <br><br><br><br>
     
+    <p><b>NOTE:</b> If you experience lag at any point in the game, it may be due to your browser taking some time
+      to load the large game files. Please just wait for it to finish loading instead of refreshing the page
+      or closing the tab.
+    </p>
+    
+    <br><br><br><br>
+    
     <!-- END OF GAME -->
     
     <!--  QUICK POST-GAME QUIZ MESSAGE
