@@ -10,6 +10,9 @@ $username = $_SESSION['username'];
 
 if(isset($_POST['pre-game-otp'])){
   $pre_game_otp = validate($_POST['pre-game-otp']);
+  
+  $_SESSION['check_url'] = "gameplay";
+  unset($_POST['pre-game-otp']);
 
   if(!check_pre_game_otp_exists_for_username($username,$pre_game_otp)){
 
@@ -263,9 +266,17 @@ $_SESSION['check_url'] = "gameplay";
 
     </p>
 
-    <br>
+    <br> 
+    
+    -->
 
-    <button  type="button" onclick="location.href='post-game-quiz'" class="start-button uppercase ff-serif text-dark bg-white">Start</button>
+<!--     <button  type="button" onclick="location.href='post-game-quiz'" class="start-button uppercase ff-serif text-dark bg-white">Start</button> -->
+    
+    <!--
+    <form method="POST" action="post-game-quiz">
+      <input type="hidden" name="postGamePlay" value="post-game-play"/>
+      <button  type="submit" class="start-button uppercase ff-serif text-dark bg-white">Start</button>
+    </form>
 
     <br><br><br><br>
     
