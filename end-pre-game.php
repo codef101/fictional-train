@@ -22,10 +22,10 @@ if(isset($_SESSION['username'])){
       if (save_player_pre_game_score($existingUsername,$preGameScore)) {
         $msg.= "<br>Your pre-game score was inserted successfully!";
       } else {
-        $msg.= "<br>Your pre-game score could not be sent.";
+        $_SESSION['username_error'] = "Your pre-game score could not be sent.";
       }
+      $_SESSION['check_url'] = "end-pre-game"; 
     }
-    $_SESSION['check_url'] = "end-pre-game";
 
 }else{
 
