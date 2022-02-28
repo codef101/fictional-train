@@ -5,8 +5,11 @@ require_once 'init.php';
 require_once 'db_conn.php';
 
 require_once 'functions.php';
-unset($_SESSION['user_id']);
-unset($_SESSION['check_url']);
+foreach($_SESSION as $key=> $value){
+  if($key != "username_error"){
+    unset($_SESSION[$key]);
+  }
+}
 
 
 ?>
