@@ -42,7 +42,7 @@ if(isset($_POST['post-game-otp'])){
 
 }
 
-$_SESSION['check_url'] = "game-ending"; */
+$_SESSION['check_url'] = "game-ending";
 
 ?>
 
@@ -85,7 +85,7 @@ $_SESSION['check_url'] = "game-ending"; */
 
   <script src="tabs.js" defer></script>
 
-  /* GAME STYLING */
+ <!-- GAME STYLING -->
   
   <style>
     
@@ -109,7 +109,7 @@ $_SESSION['check_url'] = "game-ending"; */
    
   </style>
 
-    /* END OF GAME STYLING */
+  <!-- END OF GAME STYLING -->
 
 </head>
 
