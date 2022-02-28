@@ -140,7 +140,7 @@ $_SESSION['check_url'] = "game-ending"; */
   
   <div id="end" class="container-quick-quiz flex-center flex-column">
     
-    <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: 50px 0 10px;">GAME ENDING</div>
+    <div class="fs-400 ff-sans-cond letter-spacing-3 uppercase" style="color: #D2D8F9; margin: 0 0 10px;">GAME ENDING</div>
     
     <!-- GAME ENDING -->
    
