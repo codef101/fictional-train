@@ -55,7 +55,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
         </ul>
     </nav>
     <aside class="main-sidebar sidebar-dark-info elevation-4">
-        <a href="index.php" class="brand-link">
+        <a href="index" class="brand-link">
             <span class="brand-text font-weight-light">IORS Admin Panel</span>
         </a>
         <div class="sidebar mt-3">
@@ -69,7 +69,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="admins.php" class="nav-link <?php if($cur == 'admins.php'){echo 'active';} ?>">
+                        <a href="admins" class="nav-link <?php if($cur == 'admins'){echo 'active';} ?>">
                             <i class="fas fa-users-cog"></i>
                             &nbsp;
                             <p>
@@ -78,7 +78,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="questions.php" class="nav-link <?php if($cur == 'questions.php'){echo 'active';} ?>">
+                        <a href="questions" class="nav-link <?php if($cur == 'questions'){echo 'active';} ?>">
                             <i class="fas fa-question-circle"></i>
                             &nbsp;
                             <p>
@@ -87,7 +87,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="answers.php" class="nav-link <?php if($cur == 'answers.php'){echo 'active';} ?>">
+                        <a href="answers" class="nav-link <?php if($cur == 'answers'){echo 'active';} ?>">
                             <i class=" fas fa-th"></i>
                             &nbsp;
                             <p>
@@ -96,7 +96,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="archive.php" class="nav-link <?php if($cur == 'archive.php'){echo 'active';} ?>">
+                        <a href="archive" class="nav-link <?php if($cur == 'archive'){echo 'active';} ?>">
                             <i class="fas fa-archive"></i>
                             &nbsp;
                             <p>
@@ -106,7 +106,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
                     </li>
                     <?php if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){ ?>
                     <li class="nav-item">
-                        <a href="audit.php" class="nav-link <?php if($cur == 'audit.php'){echo 'active';} ?>">
+                        <a href="audit" class="nav-link <?php if($cur == 'audit'){echo 'active';} ?>">
                             <i class="fas fa-book"></i>
                             &nbsp;
                             <p>
@@ -116,7 +116,7 @@ $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
                     </li>
                     <?php } ?>
                      <li class="nav-item">
-                        <a href="users.php" class="nav-link <?php if($cur == 'users.php'){echo 'active';} ?>">
+                        <a href="users" class="nav-link <?php if($cur == 'users'){echo 'active';} ?>">
                             <i class="fas fa-users"></i>
                             &nbsp;
                             <p>
