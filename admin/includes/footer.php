@@ -59,10 +59,10 @@
                 className:'btn-info',
                 text:'Save as PDF',
                 title:'IORS Audit Log',
-             /* download:'open',
+             /* download:'open', open in new tab
                 exportOptions:{
                     modifier:{
-                        page:'current'
+                        page:'current' download current page only
                     }
                 }*/
             }
@@ -78,10 +78,10 @@
                 className:'btn-info',
                 text:'Save as PDF',
                 title:'IORS User Information Log',
-             /* download:'open',
+             /* download:'open', open in new tab
                 exportOptions:{
                     modifier:{
-                        page:'current'
+                        page:'current' download current page only
                     }
                 }*/
             }
