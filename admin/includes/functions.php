@@ -61,4 +61,28 @@ function toggleSlash($value, $action){
 	return str_replace($search, $replace, htmlspecialchars(trim($value)));
 }
 
+function encrypt_decrypt($username, $type){
+	// Store the cipher method
+	$ciphering = "AES-128-CTR";	
+	// Use OpenSSl Encryption method
+	$iv_length = openssl_cipher_iv_length($ciphering);
+	$options = 0;
+	// Non-NULL Initialization Vector for encryption
+	$iv = '1234567891011121';
+	// Store the encryption key
+	$key = "IORS";
+	if ($type == "encrypt") {
+		// Use openssl_encrypt() function to encrypt the data
+		return openssl_encrypt($username, $ciphering, $key, $options, $iv);
+	} 
+	elseif ($type == "decrypt") {
+		// Use openssl_decrypt() function to decrypt the data
+		return openssl_decrypt ($username, $ciphering, $key, $options, $iv);
+	}
+	else{
+		return "Invalid method";
+	}
+}
+
+
 ?>
