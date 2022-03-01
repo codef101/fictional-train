@@ -27,7 +27,7 @@ request.send("questionrequest=post-game");
 request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(this.responseText);
-        for(let i=15;i<30;i=i+1){
+        for(let i=10;i<20;i=i+1){
             questions.push({
                 "question": data[i].question,
 
