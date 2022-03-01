@@ -34,7 +34,7 @@ if(!isset($_SESSION['post_game_otp_error']) && !isset($_POST['resend-otp'])){
 
           $_SESSION['post_game_email_error'] = 'This email does not match the previous email you inputted. Please try again.';
 
-          header('location: end-post-game.php');
+          header('location: end-post-game');
 
           exit();
 
