@@ -33,7 +33,7 @@ include('includes/functions.php');
                         ?>
                         <tr>
                             <td>
-                                <?php echo $r['username'];?>
+                                <?php echo encrypt_decrypt($r['username'],'decrypt');?>
                             </td>
                             <td>
                                 <?php echo $r['age'];?>
