@@ -46,6 +46,18 @@ function check_username_exists($username){
 	return $result && mysqli_num_rows($result)==1 ? true : false;
 }
 
+function check_email_exists($email){
+	global $conn;
+    $email = encrypt_decrypt($email,'encrypt');
+	$sql = sprintf("SELECT * FROM player_info WHERE pre_game_email = '%s' or post_game_email = '%s'",$email,$email);
+	$result = mysqli_query($conn,$sql);
+	if(mysqli_num_rows($result)>0){
+		return true;
+	}else{
+		return false;
+	}
+}
+
 function check_pre_game_email_exists($username,$email){
 	global $conn;
     $username = encrypt_decrypt($username,'encrypt');
