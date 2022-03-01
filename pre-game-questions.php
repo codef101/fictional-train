@@ -3,7 +3,7 @@
     require_once 'db_conn.php';
     if(isset($_POST['questionrequest'])  && $_POST['questionrequest'] === "pre-game"){
         $question_arr = [[]];
-        for($i = 0;$i < 15;$i++){
+        for($i = 0;$i < 10;$i++){
             $get_option = [];
             $question_arr[$i]['question'] = $_SESSION['questions'][$i]['question'];
             $sql = sprintf("SELECT *  FROM answers where question_id = '%s'",$_SESSION['questions'][$i]['question_id']);
