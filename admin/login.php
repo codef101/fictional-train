@@ -44,6 +44,9 @@ if (isset($_POST['login'])) {
         }
     }
 }
+if(isset($_SESSION['uid']) && intval($_SESSION['uid']) > 0 && isset($_SESSION['is_login']) && $_SESSION['is_login']===true){
+    header('location:index');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
