@@ -59,12 +59,12 @@
                 className:'btn-info',
                 text:'Save as PDF',
                 title:'IORS Audit Log',
-                download:'open',
+             /* download:'open',
                 exportOptions:{
                     modifier:{
                         page:'current'
                     }
-                }
+                }*/
             }
             ],
             "responsive": true,
@@ -78,12 +78,12 @@
                 className:'btn-info',
                 text:'Save as PDF',
                 title:'IORS User Information Log',
-                download:'open',
+             /* download:'open',
                 exportOptions:{
                     modifier:{
                         page:'current'
                     }
-                }
+                }*/
             }
             ],
             "responsive": true,
