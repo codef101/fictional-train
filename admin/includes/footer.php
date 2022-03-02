@@ -72,7 +72,7 @@
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $("#example2").DataTable({
-            "ordering": false,
+            "ordering": true,
             "lengthChange": true,
             "autoWidth": false,
             "buttons": [{
