@@ -4,7 +4,7 @@ include('includes/functions.php');
 if (!$_SESSION['is_s_admin']){
     ?>
     <script>
-        window.location.href='index.php'
+        window.location.href='index'
     </script>
     <?php
 }
@@ -123,7 +123,7 @@ if (isset($_POST['register'])) {
             <div class="card-header">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title">Add new Admin</h3>
-                    <a class="btn btn-sm btn-secondary" href="admins.php">Back</a>
+                    <a class="btn btn-sm btn-secondary" href="admins">Back</a>
                 </div>
             </div>
             <form action="#" method="post">
