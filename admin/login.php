@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
             }
             $action='Logged in the system';
             logEntry($action,$user['id'],$con);
-            header('location:index.php');
+            header('location:index');
         } else {
             $valid = false;
             $error = "Account not found";
@@ -109,7 +109,7 @@ if(isset($_SESSION['uid']) && intval($_SESSION['uid']) > 0 && isset($_SESSION['i
                 </div>
             </form>
             <p class="mb-1">
-                <a href="forgot-password.php" class="text-white">Forgot Password?</a>
+                <a href="forgot-password" class="text-white">Forgot Password?</a>
             </p>
         </div>
 
