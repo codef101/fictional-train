@@ -44,7 +44,7 @@ request.onreadystatechange = function() {
         }       
         // CONSTANTS
         const CORRECT_BONUS = 1;
-        const MAX_QUESTIONS = 15;
+        const MAX_QUESTIONS = 10;
         startGame = () => {
             questionCounter = -1;
             score = 0;
