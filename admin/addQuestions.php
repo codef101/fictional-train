@@ -96,7 +96,7 @@ if(isset($_POST['addquestion']))
             <div class="card-header">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title">Add New Question</h3>
-                    <a class="btn btn-sm btn-secondary" href="addQuestions.php">Add Another Question</a>
+                    <a class="btn btn-sm btn-secondary" href="addQuestions">Add Another Question</a>
                 </div>
             </div>
             <form method="post" action="#">
