@@ -2325,3 +2325,29 @@ body {
     padding: 0.5rem;
 
 }
+
+
+@media (min-width: 45rem) {
+    .grid-container--about > picture {
+        grid-area: image;
+        max-width: 90%;
+    }
+    .aboutgame{
+        margin-bottom: 138%;
+    }
+    .aboutcompaign{
+        margin-bottom: 155%;
+    }
+}
+@media (min-width: 48.1rem) {
+    .grid-container--about > picture {
+        grid-area: image;
+        max-width: 90%;
+    }
+    .aboutgame{
+        margin-bottom: 41%;
+    }
+    .aboutcompaign{
+        margin-bottom: 56%;
+    }
+}
