@@ -242,7 +242,7 @@
 
 
 
-    <picture id="game-image">
+    <picture id="game-image" class="aboutgame">
 
       <source srcset="assets/about/about-game-img.webp" type="image/webp">
 
@@ -252,7 +252,7 @@
 
 
 
-    <picture hidden id="campaign-image">
+    <picture hidden id="campaign-image" class="aboutcampaign">
 
       <source srcset="assets/about/about-campaign-img.webp" type="image/webp">
 
