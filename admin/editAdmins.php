@@ -112,7 +112,7 @@ if (isset($_POST['register'])) {
         if ($res->num_rows == 0) {
             $date=date('Y-m-d H:i:s');
               $pass=hash('sha256',$password);
-              $sql = "UPDATE `admin` SET `first_name`='$fname',`last_name`='$lname',`email`='$email',`password`='$pass', `updated_at`='$date' WHERE `id`=$id";
+              $sql = "UPDATE `admin` SET `first_name`='$fname',`last_name`='$lname',`email`='$email',`password`='$pass',`admin_role`=$role, `updated_at`='$date' WHERE `id`=$id";
               $res=$con->query($sql);
             if ($res === true) {
                 $action='Updated Admin: '.$email;
@@ -180,17 +180,16 @@ if (isset($_POST['register'])) {
                         <span class="text-danger"><?php echo $cpassword_err ?></span>
                     </div>
                 </div>
-                    <!--
                    <div class="mb-3">
                         <div class="form-group">
                             <label>Role</label><br>
                             <select class="select" name="role">
-                                <option value="0" <?//php if($role == 0){echo "selected";} ?>>Super Admin</option>
-                                <option value="1"  <?//php if($role == 1){echo "selected";} ?>>Admin</option>
+                                <option value="0" <?php if($role == 0){echo "selected";} ?>>Super Admin</option>
+                                <option value="1"  <?php if($role == 1){echo "selected";} ?>>Admin</option>
                             </select>
-                            <span class="text-danger"> <?//php echo $role_err; ?></span>
+                            <span class="text-danger"> <?php echo $role_err; ?></span>
                         </div>
-                    </div>-->
+                    </div>
                 <div class="row">
                     <div class="col-12">
                         <button type="submit" name="register" class="btn btn-primary ">Submit</button>
