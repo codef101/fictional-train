@@ -32,7 +32,7 @@ if(isset($_GET['id']))
 
              ?>
              <script>
-                 window.location.href='questions.php';
+                 window.location.href='questions';
              </script>
              <?php
              exit();
@@ -51,7 +51,7 @@ else
 {
 ?>
     <script>
-        window.location.href='questions.php';
+        window.location.href='questions';
     </script>
 <?php
 }
