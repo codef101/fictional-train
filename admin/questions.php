@@ -12,7 +12,7 @@ if(isset($_GET['did'])){
 
             ?>
             <script>
-                window.location.href='questions.php';
+                window.location.href='questions';
             </script>
             <?php
             exit();
@@ -28,7 +28,7 @@ if(isset($_GET['did'])){
         logEntry($action,$_SESSION['uid'],$con);
         ?>
         <script>
-            window.location.href='questions.php'
+            window.location.href='questions'
         </script>
         <?php
     }
@@ -43,7 +43,7 @@ if(isset($_GET['did'])){
             <div class="card-header">
                 <div class="d-flex justify-content-between">
                 <h3 class="card-title">Questions</h3>
-                <a class="btn btn-sm btn-primary" href="addQuestions.php">Add New Question</a>
+                <a class="btn btn-sm btn-primary" href="addQuestions">Add New Question</a>
                 </div>
             </div>
             <div class="card-body">
@@ -71,8 +71,8 @@ if(isset($_GET['did'])){
                         <td><?php echo $r['email']; ?></td>
                         <td><?php echo $r['question']; ?></td>
                         <td class="d-flex">
-                            <a href="editQuestions.php?id=<?php echo $r['question_id']; ?>" class="btn btn-sm btn-primary <?php if(!$can_do){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
-                            <a href="questions.php?did=<?php echo $r['question_id'];?>" class="btn btn-sm ml-1 btn-danger delete-confirm <?php if(!$can_do){echo 'disabled';} ?>"><i class="fas fa-trash-alt"></i></a>
+                            <a href="editQuestions?id=<?php echo $r['question_id']; ?>" class="btn btn-sm btn-primary <?php if(!$can_do){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
+                            <a href="questions?did=<?php echo $r['question_id'];?>" class="btn btn-sm ml-1 btn-danger delete-confirm <?php if(!$can_do){echo 'disabled';} ?>"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                     <?php $i++; } ?>
