@@ -26,7 +26,7 @@ $archived=$res->num_rows;
                 <div class="icon">
                     <i class="fas fa-question-circle"></i>
                 </div>
-                <a href="questions.php" class="small-box-footer">More info</a>
+                <a href="questions" class="small-box-footer">More info</a>
             </div>
         </div>
         <div class="col-lg-4 col-6">
@@ -40,7 +40,7 @@ $archived=$res->num_rows;
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="archive.php" class="small-box-footer">More info</a>
+                <a href="archive" class="small-box-footer">More info</a>
             </div>
         </div>
         <!-- ./col -->
@@ -55,7 +55,7 @@ $archived=$res->num_rows;
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
                 </div>
-                <a href="admins.php" class="small-box-footer">More info</a>
+                <a href="admins" class="small-box-footer">More info</a>
             </div>
     </div>
 <?php
