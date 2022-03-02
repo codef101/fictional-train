@@ -84,7 +84,7 @@ include('includes/functions.php');
                             <td><?php echo $r['email']; ?></td>
                             <td><?php echo $role; ?></td>
                             <td class="d-flex">
-                                <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary <?php if(!$can_update){echo 'disabled';} ?><?php if(!$can_delete){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
+                                <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary <?php if(!$can_update){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
                                 <a href="admins?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm <?php if(!$can_delete){echo 'disabled';} ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
