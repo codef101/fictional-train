@@ -14,7 +14,7 @@ include('includes/functions.php');
                 <table id="example2" class="table table-dark table-striped table-hover">
                     <thead>
                     <tr>
-                         <th>#</th>
+                         <th style="width: 5%">#</th>
                         <th style ="width: 20%">Username</th>
                         <th style ="width: 10%">Age</th>
                         <th style ="width: 10%">Gender</th>
