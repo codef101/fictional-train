@@ -100,7 +100,7 @@ if (isset($_POST['register'])) {
 
             $date=date('Y-m-d H:i:s');
             $pass=hash('sha256',$password);
-             $sql = "INSERT INTO `admin` (`first_name`, `last_name`, `email`, `password`,`created_at`) VALUES ('$fname','$lname','$email','$pass','$date')";
+             $sql = "INSERT INTO `admin` (`first_name`, `last_name`, `email`, `password`,`admin_role`,`created_at`) VALUES ('$fname','$lname','$email','$pass',$role,'$date')";
              $res=$con->query($sql);
             if ($res === true) {
                 $action='Added Admin: '.$email;
@@ -169,16 +169,16 @@ if (isset($_POST['register'])) {
                         <span class="text-danger"><?php echo $cpassword_err ?></span>
                     </div>
                 </div>
-                    <!--<div class="mb-3">
+                    <div class="mb-3">
                         <div class="form-group">
                             <label>Role</label><br>
                             <select class="select" name="role">
                                 <option value="0">Super Admin</option>
                                 <option value="1">Admin</option>
                             </select>
-                            <span class="text-danger"><?//php echo $role_err;?></span>
+                            <span class="text-danger"><?php echo $role_err;?></span>
                         </div>
-                    </div>-->
+                    </div>
                 <div class="row">
                     <div class="col-12">
                         <button type="submit" name="register" class="btn btn-primary">Submit</button>
