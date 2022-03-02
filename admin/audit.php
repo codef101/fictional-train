@@ -6,7 +6,7 @@ include('includes/functions.php');
         {
             ?>
             <script>
-                window.location.href='index.php';
+                window.location.href='index';
             </script>
             <?php
             exit();
