@@ -28,7 +28,7 @@ if(isset($_GET['id']) && isset($_GET['token']))
 }
 else
 {
-    header('location:login.php');
+    header('location:login');
 }
 if(isset($_POST['recover']))
 {
@@ -143,7 +143,7 @@ if(isset($_POST['recover']))
       </form>
 
       <p class="mt-3 mb-1">
-        <a href="login.php" class="text-white">Login</a>
+        <a href="login" class="text-white">Login</a>
       </p>
     </div>
 
