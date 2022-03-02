@@ -4,5 +4,5 @@ include('includes/functions.php');
 $action='Logged out.';
 logEntry($action,$_SESSION['uid'],$con);
 session_destroy();
-header('location:login.php');
+header('location:login');
 ?>
