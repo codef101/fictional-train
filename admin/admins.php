@@ -12,7 +12,7 @@ include('includes/functions.php');
        if (!$can){
            ?>
            <script>
-               window.location.href='index.php'
+               window.location.href='index'
            </script>
            <?php
            exit();
@@ -26,7 +26,7 @@ include('includes/functions.php');
            logEntry($action,$_SESSION['uid'],$con);
            ?>
            <script>
-               window.location.href='admins.php'
+               window.location.href='admins'
            </script>
            <?php
        }
@@ -39,7 +39,7 @@ include('includes/functions.php');
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                     <h3 class="card-title">Admins</h3>
-                        <a href="addAdmins.php" class="btn btn-sm btn-primary <?php if(!isset($_SESSION['is_s_admin'])){echo 'disabled';} ?>">Add New Admin</a>
+                        <a href="addAdmins" class="btn btn-sm btn-primary <?php if(!isset($_SESSION['is_s_admin'])){echo 'disabled';} ?>">Add New Admin</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -84,8 +84,8 @@ include('includes/functions.php');
                             <td><?php echo $r['email']; ?></td>
                             <td><?php echo $role; ?></td>
                             <td class="d-flex">
-                                <a href="editAdmins.php?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary <?php if(!$can_update){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
-                                <a href="admins.php?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm <?php if(!$can_delete){echo 'disabled';} ?>"><i class="fas fa-trash-alt"></i></a>
+                                <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary <?php if(!$can_update){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
+                                <a href="admins?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm <?php if(!$can_delete){echo 'disabled';} ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         <?PHP  $i++; } ?>
