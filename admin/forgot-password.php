@@ -53,7 +53,7 @@ if(isset($_POST['forgot']))
                   $mail->Password   = $your_password; //components/connect.php
                   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                   $mail->Port       = 465;
-                  $path=$url.'/recover-password.php';
+                  $path=$url.'/recover-password';
                   //Recipients
                   $mail->setFrom($your_email, 'In Our Red Stilettos Admin Panel');
                   $mail->addAddress($email,$user['first_name']);     //Add a recipient
@@ -120,7 +120,7 @@ if(isset($_POST['forgot']))
         </div>
       </form>
       <p class="mt-3 mb-1">
-        <a href="login.php" class="text-white">Login</a>
+        <a href="login" class="text-white">Login</a>
       </p>
     </div>
   </div>
