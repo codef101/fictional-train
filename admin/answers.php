@@ -43,7 +43,7 @@ include('includes/functions.php');
                                 <?php } ?>
                             </td>
                             <td>
-                                <a href="editQuestions.php?id=<?php echo $r['question_id'];  ?>" class="btn btn-sm btn-primary <?php if(!$can_do){ echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
+                                <a href="editQuestions?id=<?php echo $r['question_id'];  ?>" class="btn btn-sm btn-primary <?php if(!$can_do){ echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
                             </td>
                         </tr>
                     <?php $i++; } ?>
