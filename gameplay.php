@@ -270,7 +270,7 @@ $_SESSION['check_url'] = "gameplay";
     
     -->
 
-    <button  type="button" onclick="location.href='post-game-quiz'" class="start-button uppercase ff-serif text-dark bg-white">Start</button>
+    <!--<button  type="button" onclick="location.href='post-game-quiz'" class="start-button uppercase ff-serif text-dark bg-white">Start</button>-->
     
     <!--
     <form method="POST" action="post-game-quiz">
