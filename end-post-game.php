@@ -23,13 +23,14 @@ if(isset($_SESSION['username'])){
 
           
           $msg.= "<br>Your post-game score was inserted successfully!";
+          $_SESSION['check_url'] = "end-post-game";
+          unset($_POST['postGameScore']);
 
         } else {
 
           $msg.= "<br>Your post-game quiz score could not be sent.";
 
         }
-        $_SESSION['check_url'] = "end-post-game";
     }
 
 }else{
