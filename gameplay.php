@@ -273,7 +273,7 @@ $_SESSION['check_url'] = "gameplay";
     <!--<button  type="button" onclick="location.href='post-game-quiz'" id="start-button" class="start-button uppercase ff-serif text-dark bg-white">Start</button>-->
     
     
-    <form method="POST" action="post-game-quiz" style="display: none;">
+    <form method="POST" action="post-game-quiz"> <!--style="display: none;-->
       <input type="hidden" name="postGamePlay" value="post-game-play"/>
       <button  type="submit" class="start-button uppercase ff-serif text-dark bg-white" id="start-button">Start</button>
     </form>
