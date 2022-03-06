@@ -129,16 +129,16 @@ if (isset($_POST['register'])) {
             <form action="#" method="post">
                 <div class="card-body">
                     <?php if ($yes != null) { ?>
-                        <p class="alert alert-success"><?php echo $yes; ?></p>
+                        <p class="p-3 mb-2 bg-danger text-white"><?php echo $yes; ?></p>
                     <?php } ?>
                     <?php if ($error != null) { ?>
-                        <p class="alert alert-danger"><?php echo $error; ?></p>
+                        <p class="p-3 mb-2 bg-danger text-white"><?php echo $error; ?></p>
                     <?php } ?>
                 <div class="mb-3">
                     <div class="form-group">
                         <label>First Name</label>
                         <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>">
-                        <span class="alert alert-danger"><?php echo $fname_err; ?></span>
+                        <span class="p-3 mb-2 bg-danger text-white"><?php echo $fname_err; ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
