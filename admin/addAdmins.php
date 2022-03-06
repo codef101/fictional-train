@@ -32,8 +32,7 @@ if (isset($_POST['register'])) {
     //error checking
     $valid = true;
     if (empty($fname)) {
-        $valid = false;
-        $fname_err = "First Name is required";
+        "First Name is required";
     }
     if (ctype_alpha(str_replace(' ', '', $fname)) === false)  {
         $fname_err = 'First Name must contain letters and spaces only';
@@ -137,9 +136,8 @@ if (isset($_POST['register'])) {
                 <div class="mb-3">
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>">
-                        <span class="p-3 mb-2 bg-danger text-white"><?php echo $fname_err; ?></span>
-                    </div>
+                        <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>"
+                        <?phpif(!empty($fname)){ echo "<div class='alert alert-danger'>" . $fname . "</div>"; }?>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
