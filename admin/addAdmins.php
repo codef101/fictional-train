@@ -138,21 +138,21 @@ if (isset($_POST['register'])) {
                     <div class="form-group">
                         <label>First Name</label>
                         <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>">
-                        <span class="text-danger"><?php echo $fname_err; ?></span>
+                        <span class="alert alert-danger"><?php echo $fname_err; ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
                         <label>Last Name</label>
                         <input type="text" class="form-control" placeholder="Last name" name="lname"  value="<?php echo $lname; ?>">
-                        <span class="text-danger"><?php echo $lname_err; ?></span>
+                        <span class="alert alert-danger"><?php echo $lname_err; ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-control" placeholder="Email" name="email"  value="<?php echo $email; ?>">
-                        <span class="text-danger"><?php echo $email_err; ?></span>
+                        <span class="alert alert-danger"><?php echo $email_err; ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
