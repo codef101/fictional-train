@@ -31,8 +31,9 @@ if (isset($_POST['register'])) {
     $role= trim($_POST['role']);
     //error checking
     $valid = true;
-    if (empty($fnameerror)) {
-        "First Name is required";
+    if (empty($fname)) {
+        $valid = false;
+        $fname_err = "First Name is required";
     }
     if (ctype_alpha(str_replace(' ', '', $fname)) === false)  {
         $fname_err = 'First Name must contain letters and spaces only';
@@ -136,21 +137,22 @@ if (isset($_POST['register'])) {
                 <div class="mb-3">
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>"
-                        <?phpif(!empty($fnameerror)){ echo "<div class='alert alert-danger'>" . $fnameerror . "</div>"; }?>
+                        <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>">
+                        <span class="text-danger"><?php echo $fname_err; ?></span>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
                         <label>Last Name</label>
                         <input type="text" class="form-control" placeholder="Last name" name="lname"  value="<?php echo $lname; ?>">
-                        <span class="p-3 mb-2 bg-danger text-white"><?php echo $lname_err; ?></span>
+                        <span class="text-danger"><?php echo $lname_err; ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-control" placeholder="Email" name="email"  value="<?php echo $email; ?>">
-                        <span class="p-3 mb-2 bg-danger text-white"><?php echo $email_err; ?></span>
+                        <span class="text-danger"><?php echo $email_err; ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
