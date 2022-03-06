@@ -49,8 +49,8 @@ if(isset($_POST['forgot']))
                   $mail->isSMTP();
                   $mail->Host       = 'smtp.gmail.com';
                   $mail->SMTPAuth   = true;
-                  $mail->Username   = $your_email; //components/connect.php
-                  $mail->Password   = $your_password; //components/connect.php
+                  $mail->Username   = $your_email; //dbcon/connect.php
+                  $mail->Password   = $your_password; //dbcon/connect.php
                   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                   $mail->Port       = 465;
                   $path=$url.'/recover-password';
