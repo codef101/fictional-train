@@ -31,7 +31,7 @@ if (isset($_POST['register'])) {
     $role= trim($_POST['role']);
     //error checking
     $valid = true;
-    if (empty($fname)) {
+    if (empty($fnameerror)) {
         "First Name is required";
     }
     if (ctype_alpha(str_replace(' ', '', $fname)) === false)  {
@@ -137,7 +137,7 @@ if (isset($_POST['register'])) {
                     <div class="form-group">
                         <label>First Name</label>
                         <input type="text" class="form-control" placeholder="First name" name="fname"  value="<?php echo $fname; ?>"
-                        <?phpif(!empty($fname)){ echo "<div class='alert alert-danger'>" . $fname . "</div>"; }?>
+                        <?phpif(!empty($fnameerror)){ echo "<div class='alert alert-danger'>" . $fnameerror . "</div>"; }?>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
