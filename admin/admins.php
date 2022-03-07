@@ -1,14 +1,13 @@
 <?php
 include('includes/header.php');
 include('includes/functions.php');
-   if(isset($_GET['did']))
-   {
+   if(isset($_GET['did'])){
        $did=$_GET['did'];
        $date=date('Y-m-d');
        $sql_get="SELECT * FROM `admin` WHERE `id`=$did";
        $get_res=$con->query($sql_get);
        $get_admin=$get_res->fetch_assoc();
-       $can=canDeleteAdmins($get_admin['admin_role']);
+       $can=canDeleteAdmins($_SESSION['role']);
        if (!$can){
            ?>
            <script>
@@ -17,20 +16,46 @@ include('includes/functions.php');
            <?php
            exit();
        }
-       $admin_email=$get_admin['email'];
-       $sql="DELETE FROM `admin` WHERE `id`=$did";
-       $res=$con->query($sql);
-       if($res)
-       {
-           $action= 'Deleted Admin: '.$admin_email.'';
-           logEntry($action,$_SESSION['uid'],$con);
-           ?>
-           <script>
-               window.location.href='admins'
-           </script>
-           <?php
-       }
-
+      
+       if($can){
+            if($get_admin['admin_role'] != $_SESSION['role']){
+                $condition = false;
+            }
+            if($get_admin['admin_role'] == $_SESSION['role']){
+                $sql = "SELECT * FROM `admin` WHERE `admin_role` = ".$_SESSION['role'];
+                $res=$con->query($sql);
+                $condition = $res->num_rows == 1;
+            }
+            if($condition && $_SESSION['role'] == 0 ){?>
+            <script>
+               window.location.href='admins';
+            </script>
+            <?php    
+            }else{
+                $admin_email=$get_admin['email'];
+                $sql="DELETE FROM `admin` WHERE `id`=$did";
+                $res=$con->query($sql);
+                if($res){
+                   $action= 'Deleted Admin: '.$admin_email.'';
+                   logEntry($action,$_SESSION['uid'],$con);
+                   if(intval($_SESSION['uid'])==intval($did)){
+                       $action='Delete Supper Admin: '.$admin_email.' itself and Logged out.';
+                       logEntry($action,$_SESSION['uid'],$con);
+                       session_destroy();
+                       ?>
+                       <script>
+                           window.location.href='login';
+                       </script>
+                       <?php
+                   }
+                   ?>
+                   <script>
+                       window.location.href='admins';
+                   </script>
+                   <?php
+                }
+            } 
+        }
    }
 ?>
     <div class="row pt-3">
