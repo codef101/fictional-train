@@ -84,5 +84,19 @@ function encrypt_decrypt($username, $type){
 	}
 }
 
+function notOnlySpecialChars($string){
+    if (preg_match('/[A-Za-z0-9]/', $string)) {
+        return $status = array(
+            "status" => true,
+            "message" => ""
+        );
+    } else {
+        return $status = array(
+            "status" => false,
+            "message" => "Only Special Character Not allowed"
+        );
+    }
+}
+
 
 ?>
