@@ -24,7 +24,7 @@ function get_browser_name($user_agent){
 function canDeleteAdmins($role)
 {
     if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){
-        if($role !=0) {
+        if($role ==0) {
             return true;
         }
     }
