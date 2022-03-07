@@ -247,8 +247,13 @@ $_SESSION['check_url'] = "gameplay.php";
     </div>
     
     <p><b>NOTE:</b> If you experience lag at any point in the game, it may be due to your browser taking some time
-      to load the large game files. Please just wait for it to finish loading instead of refreshing the page
+      to load the large game files. Please wait for it to finish loading instead of refreshing the page
       or closing the tab.
+      <br><br>
+      If you encounter an Uncaught TypeError, please refresh the page and play again. It is recommended that you save your game
+      progress as much as possible to be able to easily continue from your current save point instead of starting over 
+      after refreshing the page. Remember that you can only save game progress while your character is in the town map. 
+      Refer to the commands list above the game for more details.
     </p>
     
     <br><br><br><br>
@@ -273,8 +278,8 @@ $_SESSION['check_url'] = "gameplay.php";
     <!--<button  type="button" onclick="location.href='post-game-quiz'" id="start-button" class="start-button uppercase ff-serif text-dark bg-white">Start</button>-->
     
     
-    <form method="POST" action="post-game-quiz.php"> <!--style="display: none;-->
-      <input type="hidden" name="postGamePlay" value="post-game-play"/>
+    <form method="POST" action="post-game-quiz.php" style="display: none;">
+      <input type="text" name="postGamePlay" value="post-game-play"/>
       <button  type="submit" class="start-button uppercase ff-serif text-dark bg-white" id="start-button">Start</button>
     </form>
 
