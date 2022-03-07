@@ -29,6 +29,7 @@ if (isset($_POST['login'])) {
             $_SESSION['is_login']=true;
             $_SESSION['name']=$user['first_name'];
             $_SESSION['email']=$user['email'];
+            $_SESSION['role']=$user['admin_role'];
             if($user['admin_role'] == 0) {
                 $_SESSION['is_s_admin'] = true;
             }
