@@ -71,7 +71,7 @@ include('includes/functions.php');
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                    <table id="tabletest2" class="table table-dark table-striped table-hover">
+                    <table id="tabletest" class="table table-dark table-striped table-hover">
                         <thead>
                         <tr>
                             <th>#</th>
