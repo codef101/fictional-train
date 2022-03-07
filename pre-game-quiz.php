@@ -267,6 +267,9 @@ and/or underscores (_)';
     </div>
 
   </div>
+  <form id="scoreSubmitForm" action="end-pre-game.php" method="post">
+    <input type="hidden" name="preGameScore" id="preGameScore">
+</form>
   <script src="pre-game-quiz.js"></script>
 
   </body>
