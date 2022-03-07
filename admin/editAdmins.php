@@ -21,6 +21,7 @@ $password_err = null;
 $cpassword_err = null;
 $role= null;
 $role_err= null;
+$currentpassword= null;
 if(isset($_GET['id']))
 {
     $id=$_GET['id'];
@@ -30,7 +31,8 @@ if(isset($_GET['id']))
     $fname=$admin['first_name'];
     $lname=$admin['last_name'];
     $email=$admin['email'];
-    $role =$admin['admin_role'];
+    $role_current =$admin['admin_role'];
+    $currentpassword =$admin['password'];
 }
 else
 {
@@ -43,87 +45,120 @@ else
 $yes = null;
 $error = null;
 if (isset($_POST['register'])) {
-    $fname = trim($_POST['fname']);
-    $lname = trim($_POST['lname']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $cpassword = trim($_POST['cpassword']);
-    $role=$_POST['role'];
-    $valid = true;
-    if (empty($fname)) {
-        $valid = false;
-        $fname_err = "First Name is required";
+    $validinput = true;
+    $check = notOnlySpecialChars($_POST['fname']);
+    if($check['status'] === false){
+        $validinput = false;
+        $fname_err = $check['message'];
     }
-    if (ctype_alpha(str_replace(' ', '', $fname)) === false)  {
-        $fname_err = 'First Name must contain letters and spaces only';
-        $valid=false;
+    $check = notOnlySpecialChars($_POST['lname']);
+    if($check['status'] === false){
+        $validinput = false;
+        $lname_err = $check['message'];
     }
-    if (empty($lname)) {
-        $valid = false;
-        $lname_err = "Last Name is required";
-    }
-    if (ctype_alpha(str_replace(' ', '', $lname)) === false)  {
-        $lname_err = 'Last Name must contain letters and spaces only';
-        $valid=false;
-    }
-    if (empty($email)) {
-        $valid = false;
-        $email_err = "Email is required";
-    }
-    if (empty($password)) {
-        $valid = false;
-        $password_err = "Password is required";
-    }
-    if (strlen($password) < 8)
-    {
-        $valid=false;
-        $password_err="Password must be at least 8 characters in length";
-    }
-    if (strlen($password) > 16)
-    {
-        $valid=false;
-        $password_err="Password must not exceed 16 characters";
-    }
-    if(preg_match('@[^\w]@', $password)){
-        $valid=false;
-        $password_err="Only letters and numbers allowed";
-    }
-    if (empty($cpassword)) {
-        $valid = false;
-        $cpassword_err = "Confirm Password is required";
-    }
-    if ($password != $cpassword) {
-        $valid = false;
-        $cpassword_err = "Password does not match";
-    }
-    if($role == 0)
-    {
-        $sql = "SELECT * FROM `admin` WHERE `admin_role` = 0 AND `id` !=$id";
+    $check = notOnlySpecialChars($_POST['email']);
+    if($check['status'] === false){
+        $validinput = false;
+        $email_err = $check['message'];
+    }    
+    if($validinput){
+        $fname = trim($_POST['fname']);
+        $lname = trim($_POST['lname']);
+        $email = trim($_POST['email']);
+        $password = trim($_POST['password']);
+        $cpassword = trim($_POST['cpassword']);
+        $role=$_POST['role'];
+        $valid = true;
+        if (empty($fname)) {
+            $valid = false;
+            $fname_err = "First Name is required";
+        }
+        if (ctype_alpha(str_replace(' ', '', $fname)) === false)  {
+            $fname_err = 'First Name must contain letters and spaces only';
+            $valid=false;
+        }
+        if (empty($lname)) {
+            $valid = false;
+            $lname_err = "Last Name is required";
+        }
+        if (ctype_alpha(str_replace(' ', '', $lname)) === false)  {
+            $lname_err = 'Last Name must contain letters and spaces only';
+            $valid=false;
+        }
+        if (empty($email)) {
+            $valid = false;
+            $email_err = "Email is required";
+        }
+        if (empty($password)) {
+            // $valid = false;
+            // $password_err = "Password is required";
+        }
+        if ($password!=null && strlen($password) < 8)
+        {
+            $valid=false;
+            $password_err="Password must be at least 8 characters in length";
+        }
+        if ($password!=null && strlen($password) > 16)
+        {
+            $valid=false;
+            $password_err="Password must not exceed 16 characters";
+        }
+        if($password!=null && preg_match('@[^\w]@', $password)){
+            $valid=false;
+            $password_err="Only letters and numbers allowed";
+        }
+        if ($cpassword!=null && empty($cpassword)) {
+            $valid = false;
+            $cpassword_err = "Confirm Password is required";
+        }
+        if ($cpassword!=null && $password!=null && $password != $cpassword) {
+            $valid = false;
+            $cpassword_err = "Password does not match";
+        }
+        
+        // if($role_current == 0)
+        // {
+        //    $sql = "SELECT * FROM `admin` WHERE `admin_role` = 0 AND `id` !=$id";
+        //    $res=$con->query($sql);
+        //    if($res->num_rows == 2)
+        //    {
+        //        $valid =false;
+        //        $role_err="Only 2 super admins allowed";
+        //    }
+        // }
+        
+        $sql = "SELECT * FROM `admin` WHERE `admin_role` = ".$role_current;
         $res=$con->query($sql);
-        if($res->num_rows == 2)
+        if($res->num_rows <= 1 && $role_current==0)
         {
             $valid =false;
-            $role_err="Only 2 super admins allowed";
+            $role_err="One Super Admin Required";
         }
-    }
-    if ($valid) {
-          $sql = "SELECT * FROM `admin` WHERE `email` = '$email' AND `id` !=$id";
-          $res=$con->query($sql);
-        if ($res->num_rows == 0) {
-            $date=date('Y-m-d H:i:s');
-              $pass=hash('sha256',$password);
-              $sql = "UPDATE `admin` SET `first_name`='$fname',`last_name`='$lname',`email`='$email',`password`='$pass',`admin_role`=$role, `updated_at`='$date' WHERE `id`=$id";
-              $res=$con->query($sql);
-            if ($res === true) {
-                $action='Updated Admin: '.$email;
-                logEntry($action,$_SESSION['uid'],$con);
-                $yes = "Updated successfully";
+                
+        if ($valid) {
+            $sql = "SELECT * FROM `admin` WHERE `email` = '$email' AND `id` !=$id";
+            $res=$con->query($sql);
+            if ($res->num_rows == 0) {
+                $date=date('Y-m-d H:i:s');
+                if($password!=null && $cpassword!=null && ($password==$cpassword)){
+                    $pass=hash('sha256',$password);
+                }else{
+                    $pass=$currentpassword;
+                }
+                $sql = "UPDATE `admin` SET `first_name`='$fname',`last_name`='$lname',`email`='$email',`password`='$pass',`admin_role`=$role, `updated_at`='$date' WHERE `id`=$id";
+                $res=$con->query($sql);
+                if ($res === true) {
+                    $role_current = $role;
+                    $action='Updated Admin: '.$email;
+                    logEntry($action,$_SESSION['uid'],$con);
+                    $yes = "Updated Successfully";
+                } else {
+                    $error = "Admin update error. Try again.";
+                }
             } else {
-                $error = "Admin update error. Try again.";
+                $valid = false;
+                $email_err = "Email is already taken";
             }
-        } else {
-            $valid = false;
-            $email_err = "Email is already taken";
         }
     }
 }
@@ -184,8 +219,8 @@ if (isset($_POST['register'])) {
                         <div class="form-group">
                             <label>Role</label><br>
                             <select class="select" name="role">
-                                <option value="0" <?php if($role == 0){echo "selected";} ?>>Super Admin</option>
-                                <option value="1"  <?php if($role == 1){echo "selected";} ?>>Admin</option>
+                                <option value="0" <?php if($role_current == 0){echo "selected";} ?>>Super Admin</option>
+                                <option value="1"  <?php if($role_current == 1){echo "selected";} ?>>Admin</option>
                             </select>
                             <span class="text-danger"> <?php echo $role_err; ?></span>
                         </div>
