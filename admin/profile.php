@@ -61,8 +61,8 @@ if (isset($_POST['profile'])) {
             $email_err = "Email is required";
         }
         if (empty($password)) {
-            $valid = false;
-            $password_err = "Password is required";
+            // $valid = false;
+            // $password_err = "Password is required";
         }
         if($crpassword!=null && hash('sha256',$crpassword) != $current_password)
         {
