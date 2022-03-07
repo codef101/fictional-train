@@ -42,18 +42,20 @@ request.onreadystatechange = function() {
         };
 
         var storeScore = function(score){
-            const xhttp = new XMLHttpRequest();
+            document.getElementById("preGameScore").value= score;
+            document.getElementById("scoreSubmitForm").submit();
+            /*const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "end-pre-game.php",true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("preGameScore="+score);
+            xhttp.send("preGameScore="+score);*/
 
         }
         getNewQuestion = () => {
             if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
                 localStorage.setItem('mostRecentScore', score);
                 storeScore(score);
-                // go to the end page
-                return window.location.assign('end-pre-game.php');
+                /* go to the end page
+                return window.location.assign('end-pre-game.php');*/
             }
             questionCounter++;
             progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
