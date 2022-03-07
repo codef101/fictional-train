@@ -131,8 +131,10 @@ if (isset($_POST['register'])) {
         $res=$con->query($sql);
         if($res->num_rows <= 1 && $role_current==0)
         {
-            $valid =false;
-            $role_err="One Super Admin Required";
+            if ($role!=0) {
+                $error="One Super Admin Required";
+            }
+            $role = 0;
         }
                 
         if ($valid) {
@@ -174,7 +176,7 @@ if (isset($_POST['register'])) {
             </div>
             <form action="#" method="post">
                 <div class="card-body">
-                    <?php if ($yes != null) { ?>
+                    <?php if ($yes != null && $error == null) { ?>
                         <p class="alert alert-success"><?php echo $yes; ?></p>
                     <?php } ?>
                     <?php if ($error != null) { ?>
