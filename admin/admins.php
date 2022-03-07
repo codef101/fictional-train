@@ -112,14 +112,12 @@ include('includes/functions.php');
                             <td><?php echo ucwords($r['last_name']); ?></td>
                             <td><?php echo $r['email']; ?></td>
                             <td><?php echo $role; ?></td>
-                            <td class="d-flex">
-                                 <?php if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){ ?>
-                                    <td class="d-flex">
-                                        <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary"><i class="far fa-edit"></i></a>
-                                        <a href="admins?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm"><i class="fas fa-trash-alt"></i></a>
-                                    </td>
-                                 <?php } ?>
-                            </td>
+                            <?php if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){ ?>
+                               <td class="d-flex">
+                                   <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary"><i class="far fa-edit"></i></a>
+                                   <a href="admins?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm"><i class="fas fa-trash-alt"></i></a>
+                               </td>
+                            <?php } ?>
                         </tr>
                         <?PHP  $i++; } ?>
                         </tbody>
