@@ -53,10 +53,12 @@ request.onreadystatechange = function() {
         };
 
         var storeScore = function(score){
-            const xhttp = new XMLHttpRequest();
+            document.getElementById("postGameScore").value= score;
+            document.getElementById("scoreSubmitForm").submit();
+            /*const xhttp = new XMLHttpRequest();
             xhttp.open("POST", "end-post-game.php");
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("postGameScore="+score);
+            xhttp.send("postGameScore="+score);*/
 
         }
 
@@ -64,8 +66,8 @@ request.onreadystatechange = function() {
             if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
                 localStorage.setItem('mostRecentScore', score);
                 storeScore(score);
-                // go to the end page
-                return window.location.assign('end-post-game.php');
+                /* go to the end page
+                return window.location.assign('end-post-game.php');*/
             }
             questionCounter++;
             progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
