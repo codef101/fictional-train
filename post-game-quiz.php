@@ -177,7 +177,9 @@ if(isset($_SESSION['check_url']) && $_SESSION['check_url']=='gameplay.php'){
     </div>
 
   </div>
-
+<form id="scoreSubmitForm" action="end-post-game.php" method="post">
+    <input type="hidden" name="postGameScore" id="postGameScore">
+</form>
   <script src="post-game-quiz.js"></script>
 
   </body>
@@ -225,7 +227,8 @@ if(isset($_SESSION['check_url']) && $_SESSION['check_url']=='gameplay.php'){
   });
 </script>
 </html>
-<?php }else{ 
+<?php }else{
+    
     header("location: game.php");
     exit();
 }
