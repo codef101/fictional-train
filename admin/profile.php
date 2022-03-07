@@ -64,30 +64,30 @@ if (isset($_POST['profile'])) {
             $valid = false;
             $password_err = "Password is required";
         }
-        if(hash('sha256',$crpassword) != $current_password)
+        if($crpassword!=null && hash('sha256',$crpassword) != $current_password)
         {
             $valid=false;
             $crpassword_err="Your current password is wrong";
         }
-        if (strlen($password) < 8)
+        if ($newpassword!=null && strlen($password) < 8)
         {
             $valid=false;
             $password_err="Password should be at least 8 characters";
         }
-        if (strlen($password) > 16)
+        if ($newpassword!=null && strlen($password) > 16)
         {
             $valid=false;
             $password_err="Password can't be greater then 16 characters";
         }
-        if(preg_match('@[^\w]@', $password)){
+        if($newpassword!=null && preg_match('@[^\w]@', $password)){
             $valid=false;
             $password_err="Only letters and numbers allowed";
         }
-        if (empty($cpassword)) {
+        if ($cpassword!=null && empty($cpassword)) {
             $valid = false;
             $cpassword_err = "Confirm Password is required";
         }
-        if ($password != $cpassword) {
+        if ($cpassword!=null && $password != $cpassword) {
             $valid = false;
             $cpassword_err = "Password does not match";
         }
