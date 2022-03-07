@@ -51,6 +51,16 @@
             "responsive": true,
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         });
+        $('#tabletest2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        });
         $("#example1").DataTable({
             "ordering": true,
             "lengthChange": true,
