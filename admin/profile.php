@@ -1,6 +1,10 @@
 <?php
 include('includes/header.php');
 include('includes/functions.php');
+$fname = null;
+$fname_err = null;
+$lname = null;
+$lname_err = null;
 $email = null;
 $password = null;
 $crpassword = null;
@@ -17,12 +21,24 @@ $res=$con->query($sql);
 $r=$res->fetch_assoc();
 $email=$r['email'];
 $current_password=$r['password'];
+$fname = $r['first_name'];
+$lname = $r['last_name'];
 if (isset($_POST['profile'])) {
+    $fname = trim($_POST['fname']);
+    $lname = trim($_POST['lname']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $crpassword = trim($_POST['crpassword']);
     $cpassword = trim($_POST['cpassword']);
     $valid = true;
+    if (empty($fname)) {
+        $valid = false;
+        $fname_err = "First Name is required";
+    }
+    if (empty($lname)) {
+        $valid = false;
+        $lname_err = "Last Name is required";
+    }
     if (empty($email)) {
         $valid = false;
         $email_err = "Email is required";
@@ -65,7 +81,7 @@ if (isset($_POST['profile'])) {
         if ($res->num_rows == 0) {
             $date=date('Y-m-d H:i:s');
              $pass=hash('sha256',$password);
-              $sql = "UPDATE `admin` SET `email`='$email',`password`='$pass', `updated_at`='$date' WHERE `id`=$uid";
+              $sql = "UPDATE `admin` SET `email`='$email',`password`='$pass', `first_name`='$fname', `last_name`='$lname', `updated_at`='$date' WHERE `id`=$uid";
               $res=$con->query($sql);
             if ($res) {
                 $action='Updated Profile';
@@ -95,13 +111,27 @@ if (isset($_POST['profile'])) {
                     <?php if ($error != null) { ?>
                         <p class="alert alert-danger"><?php echo $error; ?></p>
                     <?php } ?>
-                <div class="mb-3">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>">
-                        <span class="text-danger"><?php echo $email_err; ?></span>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" placeholder="First Name" name="fname" value="<?php echo $fname; ?>">
+                            <span class="text-danger"><?php echo $fname_err; ?></span>
+                        </div>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" placeholder="Last Name" name="lname" value="<?php echo $lname; ?>">
+                            <span class="text-danger"><?php echo $lname_err; ?></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo $email; ?>">
+                            <span class="text-danger"><?php echo $email_err; ?></span>
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <div class="form-group">
                             <label>Current Password</label>
@@ -109,26 +139,25 @@ if (isset($_POST['profile'])) {
                             <span class="text-danger"><?php echo $crpassword_err; ?></span>
                         </div>
                     </div>
-                <div class="mb-3">
-                    <div class="form-group">
-                        <label>New Password</label>
-                        <input type="password" class="form-control" placeholder="Password" name="password">
-                        <span class="text-danger"><?php echo $password_err; ?></span>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                            <span class="text-danger"><?php echo $password_err; ?></span>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-group">
-                        <label>Confirm New Password</label>
-                        <input type="password" class="form-control" placeholder="Confirm password" name="cpassword">
-                        <span class="text-danger"><?php echo $cpassword_err ?></span>
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" class="form-control" placeholder="Confirm password" name="cpassword">
+                            <span class="text-danger"><?php echo $cpassword_err ?></span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" name="profile" class="btn btn-primary">Submit</button>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" name="profile" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-
-                </div>
                 </div>
             </form>
         </div>
