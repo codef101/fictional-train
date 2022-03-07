@@ -63,8 +63,10 @@ include('includes/functions.php');
             <div class="card bg-dark text-white">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Admins</h3>
-                        <a href="addAdmins" class="btn btn-sm btn-primary <?php if(!isset($_SESSION['is_s_admin'])){echo 'disabled';} ?>">Add New Admin</a>
+                       <h3 class="card-title">Admins</h3>
+                       <?php if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){ ?>
+                               <a href="addAdmins" class="btn btn-sm btn-primary">Add new Admin</a>
+                       <?php } ?>
                     </div>
                 </div>
                 <div class="card-body">
@@ -77,7 +79,9 @@ include('includes/functions.php');
                             <th>Last Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Action</th>
+                            <?php if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){ ?>
+                                    <th>Action</th>
+                            <?php } ?>
                         </tr>
                         </thead>
                         <tbody>
@@ -109,8 +113,12 @@ include('includes/functions.php');
                             <td><?php echo $r['email']; ?></td>
                             <td><?php echo $role; ?></td>
                             <td class="d-flex">
-                                <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary <?php if(!$can_update){echo 'disabled';} ?>"><i class="far fa-edit"></i></a>
-                                <a href="admins?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm <?php if(!$can_delete){echo 'disabled';} ?>"><i class="fas fa-trash-alt"></i></a>
+                                 <?php if(isset($_SESSION['is_s_admin']) && $_SESSION['is_s_admin']){ ?>
+                                    <td class="d-flex">
+                                        <a href="editAdmins?id=<?php echo $r['id']; ?>" class="btn btn-sm  btn-primary"><i class="far fa-edit"></i></a>
+                                        <a href="admins?did=<?php echo $r['id']; ?>" class="btn btn-sm ml-1  btn-danger delete-confirm"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                 <?php } ?>
                             </td>
                         </tr>
                         <?PHP  $i++; } ?>
