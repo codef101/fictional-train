@@ -57,74 +57,102 @@ else
 }
 if(isset($_POST['addquestion']))
 {
-    $question=toggleSlash($_POST['question'], 'add');
-    $answer1=toggleSlash($_POST['answer1'], 'add');
-    $answer2=toggleSlash($_POST['answer2'], 'add');
-    $answer3=toggleSlash($_POST['answer3'], 'add');
-    $answer4=toggleSlash($_POST['answer4'], 'add');
-    $correct=$_POST['answer'];
-    $valid=true;
-    if(empty($question))
-    {
-        $valid=false;
-        $question_err="Question is required";
+    $validinput = true;
+    $check = notOnlySpecialChars($_POST['question']);
+    if($check['status'] === false){
+        $validinput = false;
+        $question_err = $check['message'];
     }
-    if(empty($answer1))
-    {
-        $valid=false;
-        $answer1_err="Answer 1 is required";
+    $check = notOnlySpecialChars($_POST['answer1']);
+    if($check['status'] === false){
+        $validinput = false;
+        $answer1_err = $check['message'];
     }
-    if(empty($answer2))
-    {
-        $valid=false;
-        $answer2_err="Answer 2 is required";
+    $check = notOnlySpecialChars($_POST['answer2']);
+    if($check['status'] === false){
+        $validinput = false;
+        $answer2_err = $check['message'];
     }
-    if(empty($answer3))
-    {
-        $valid=false;
-        $answer3_err="Answer 3 is required";
+    $check = notOnlySpecialChars($_POST['answer3']);
+    if($check['status'] === false){
+        $validinput = false;
+        $answer3_err = $check['message'];
     }
-    if(empty($answer4))
-    {
-        $valid=false;
-        $answer4_err="Answer 4 is required";
+    $check = notOnlySpecialChars($_POST['answer4']);
+    if($check['status'] === false){
+        $validinput = false;
+        $answer4_err = $check['message'];
     }
-    if($correct == null)
-    {
-        $valid =false;
-        $correct_err="Please choose one correct answer";
-    }
-    if($valid) {
-        $sql = "SELECT * FROM `questions` WHERE `question` = '$question' AND `question_id` != $id";
-        $res = $con->query($sql);
-        if (($res->num_rows == 0 )) {
-            $date = date('Y-m-d H:i:s');
-            $admin = $_SESSION['uid'];
-                        $sql = "UPDATE `questions` SET `question`='$question',`updated_at`='$date' WHERE `question_id`=$id";
-                        $res=$con->query($sql);
-            if ($res === true) {
-                //check question id
-                $question_id = $con->insert_id;
-                for ($i = 1; $i <= 4; $i++) {
-                    $its_correct = 0;
-                    if ($i == $correct) {
-                        $its_correct = 1;
-                    }
-                    $answer_tmp=${'answer' . $i};
-                    $answer_tmp_id=${'answer' . $i . '_id'};
-                    $sql = "UPDATE `answers` SET `answer`='$answer_tmp',`is_correct`=$its_correct,`updated_at`='$date' WHERE `answer_id`=$answer_tmp_id";
-                    $con->query($sql);
-                }
-                $action =  'Updated Question: ' . $question;
-                logEntry($action, $_SESSION['uid'], $con);
-                $yes = "Question updated successfully";
-            } else {
-                $error = "Question update error. Try again.";
-            }
-        }
-        else
+    if($validinput){
+        $question=toggleSlash($_POST['question'], 'add');
+        $answer1=toggleSlash($_POST['answer1'], 'add');
+        $answer2=toggleSlash($_POST['answer2'], 'add');
+        $answer3=toggleSlash($_POST['answer3'], 'add');
+        $answer4=toggleSlash($_POST['answer4'], 'add');
+        $correct=$_POST['answer'];
+        $valid=true;
+        if(empty($question))
         {
-            $question_err="Question already exists";
+            $valid=false;
+            $question_err="Question is required";
+        }
+        if(empty($answer1))
+        {
+            $valid=false;
+            $answer1_err="Answer 1 is required";
+        }
+        if(empty($answer2))
+        {
+            $valid=false;
+            $answer2_err="Answer 2 is required";
+        }
+        if(empty($answer3))
+        {
+            $valid=false;
+            $answer3_err="Answer 3 is required";
+        }
+        if(empty($answer4))
+        {
+            $valid=false;
+            $answer4_err="Answer 4 is required";
+        }
+        if($correct == null)
+        {
+            $valid =false;
+            $correct_err="Please choose one correct answer";
+        }
+        if($valid) {
+            $sql = "SELECT * FROM `questions` WHERE `question` = '$question' AND `question_id` != $id";
+            $res = $con->query($sql);
+            if (($res->num_rows == 0 )) {
+                $date = date('Y-m-d H:i:s');
+                $admin = $_SESSION['uid'];
+                            $sql = "UPDATE `questions` SET `question`='$question',`updated_at`='$date' WHERE `question_id`=$id";
+                            $res=$con->query($sql);
+                if ($res === true) {
+                    //check question id
+                    $question_id = $con->insert_id;
+                    for ($i = 1; $i <= 4; $i++) {
+                        $its_correct = 0;
+                        if ($i == $correct) {
+                            $its_correct = 1;
+                        }
+                        $answer_tmp=${'answer' . $i};
+                        $answer_tmp_id=${'answer' . $i . '_id'};
+                        $sql = "UPDATE `answers` SET `answer`='$answer_tmp',`is_correct`=$its_correct,`updated_at`='$date' WHERE `answer_id`=$answer_tmp_id";
+                        $con->query($sql);
+                    }
+                    $action =  'Updated Question: ' . $question;
+                    logEntry($action, $_SESSION['uid'], $con);
+                    $yes = "Question updated successfully";
+                } else {
+                    $error = "Question update error. Try again.";
+                }
+            }
+            else
+            {
+                $question_err="Question already exists";
+            }
         }
     }
 }
