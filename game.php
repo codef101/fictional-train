@@ -185,6 +185,8 @@ $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
         <option value="Latino">Latino</option>
 
         <option value="Black">Black</option>
+        
+        <option value="Mixed">Mixed</option>
 
       </select>
 
