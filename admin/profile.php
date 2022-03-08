@@ -44,7 +44,7 @@ if (isset($_POST['profile'])) {
         $fname = trim($_POST['fname']);
         $lname = trim($_POST['lname']);
         $email = trim($_POST['email']);
-        $password = trim($_POST['password']);
+        $newpassword = trim($_POST['password']);
         $crpassword = trim($_POST['crpassword']);
         $cpassword = trim($_POST['cpassword']);
         $valid = true;
