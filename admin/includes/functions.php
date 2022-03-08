@@ -93,7 +93,7 @@ function notOnlySpecialChars($string){
     } else {
         return $status = array(
             "status" => false,
-            "message" => "Only Special Character Not allowed"
+            "message" => "Special Characters not allowed"
         );
     }
 }
