@@ -17,8 +17,8 @@ $yes=null;
 $error=null;
 if(isset($_POST['addquestion']))
 {
-   /* $validinput = true;
-    $check = notOnlySpecialChars($_POST['question']);
+   $validinput = true;
+   /*  $check = notOnlySpecialChars($_POST['question']);
     if($check['status'] === false){
         $validinput = false;
         $question_err = $check['message'];
