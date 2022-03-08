@@ -93,6 +93,14 @@ if (isset($_POST['register'])) {
             // $valid = false;
             // $password_err = "Password is required";
         }
+        if (!empty($password) && empty($cpassword)) {
+            $valid = false;
+            $cpassword_err = "Please confirm your password";
+        }
+        if (empty($password) && !empty($cpassword)) {
+            $valid = false;
+            $password_err = "Please enter your password";
+        }
         if ($password!=null && strlen($password) < 8)
         {
             $valid=false;
