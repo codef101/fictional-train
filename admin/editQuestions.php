@@ -58,7 +58,6 @@ else
 if(isset($_POST['addquestion']))
 {
     $validinput = true;
- /*
     $check = notOnlySpecialChars($_POST['question']);
     if($check['status'] === false){
         $validinput = false;
@@ -84,7 +83,6 @@ if(isset($_POST['addquestion']))
         $validinput = false;
         $answer4_err = $check['message'];
     }
-    */
     if($validinput){
         $question=toggleSlash($_POST['question'], 'add');
         $answer1=toggleSlash($_POST['answer1'], 'add');
