@@ -5,6 +5,8 @@ if(!isset($_SESSION['is_login']))
     header('location:login.php');
 }
 $cur=substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+$cur = explode('.',$cur);
+$cur = $cur[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
